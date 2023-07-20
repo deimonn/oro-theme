@@ -19,9 +19,9 @@ a function), feel free to let me know. I will fix it as soon as possible.
 
 ## Extra
 
-- The font used in the screenshot is [Victor Mono][victor-mono]
+- The font used in the screenshot is [Victor Mono][victor-mono].
 
-- The `<- #13-18 trait MyTrait` comes from the [Bracket Lens][bracket-lens]
+- The `<- #⁠13-18 trait MyTrait` comes from the [Bracket Lens][bracket-lens]
   extension.
 
 - The diagnostic messages (`rusc: use of deprecated ...`) comes from the
