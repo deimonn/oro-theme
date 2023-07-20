@@ -27,7 +27,7 @@ a function), feel free to let me know. I will fix it as soon as possible.
 - The diagnostic messages (`rusc: use of deprecated ...`) comes from the
   [Error Lens][error-lens] extension.
 
-[image]: https://github.com/deimonn/oro-theme/blob/master/assets/demo.png
+[image]: https://raw.githubusercontent.com/deimonn/oro-theme/0d48e749e0763c34e75e019c3d12b3a2ca753640/assets/demo.png
 [victor-mono]: https://rubjo.github.io/victor-mono/
 [bracket-lens]: https://marketplace.visualstudio.com/items?itemName=wraith13.bracket-lens
 [error-lens]: https://marketplace.visualstudio.com/items?itemName=usernamehw.errorlens
