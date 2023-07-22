@@ -34,6 +34,10 @@
         "label": "#dddddd",
         "decorator": "#dddddd",
 
+        // Static function-like.
+        "function.static": "#70c2e7",
+        "method.static": "#70c2e7",
+
         // Macro.
         "macro": "#a0a0a0",
 
@@ -62,7 +66,6 @@
         "formatSpecifier": "#a0a0a0", // in rust-analyzer
 
         // Semantic modifiers.
-        "*.static": "#70c2e7",
         "*.deprecated": { "fontStyle": "strikethrough" },
         "*.modification": { "fontStyle": "underline" },
         "*.mutable": { "fontStyle": "underline" }, // in rust-analyzer
