@@ -219,6 +219,55 @@
             "settings": {
                 "foreground": "#dddddd"
             }
+        },
+        // Markup header.
+        {
+            "scope": "entity.name.section",
+            "settings": {
+                "foreground": "#e0cd78"
+            }
+        },
+        // Markup bold.
+        {
+            "scope": "markup.bold",
+            "settings": {
+                "fontStyle": "bold"
+            }
+        },
+        // Markup italic.
+        {
+            "scope": "markup.italic",
+            "settings": {
+                "fontStyle": "italic"
+            }
+        },
+        // Markup underline.
+        {
+            "scope": "markup.underline",
+            "settings": {
+                "fontStyle": "underline"
+            }
+        },
+        // Markup strikethrough.
+        {
+            "scope": "markup.strikethrough",
+            "settings": {
+                "fontStyle": "strikethrough"
+            }
+        },
+        // Markup raw.
+        {
+            "scope": ["markup.inline.raw", "fenced_code.block.language"],
+            "settings": {
+                "foreground": "#a0a0a0"
+            }
+        },
+        // Markup quote.
+        {
+            "scope": "markup.quote",
+            "settings": {
+                "foreground": "#a0a0a0"
+            }
         }
     ],
     "colors": {
