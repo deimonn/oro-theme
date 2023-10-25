@@ -313,7 +313,7 @@
         "tab.inactiveBackground": "#1C1C1C",
         "textLink.activeForeground": "#4eb3e2",
         "textLink.foreground": "#70c2e7",
-        "textPreformat.foreground": "#70c2e7",
+        "textPreformat.foreground": "#ffffff",
         "textSeparator.foreground": "#161616",
         "titleBar.activeBackground": "#1C1C1C",
         "titleBar.inactiveBackground": "#1C1C1C",
