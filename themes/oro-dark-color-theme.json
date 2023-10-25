@@ -27,6 +27,8 @@
         "keyword": "#e0cd78",
         "operator": "#e0cd78",
         "lifetime": "#e0cd78", // in rust-analyzer
+        "selfParameter": "#e0cd78", // in Pylance
+        "clsParameter": "#e0cd78", // in Pylance
 
         // Function-like.
         "function": "#dddddd",
@@ -49,6 +51,7 @@
 
         // Constant.
         "boolean": "#77d4d4", // in rust-analyzer
+        "builtinConstant": "#77d4d4", // in Pylance
 
         // Comment.
         "comment": "#909090",
