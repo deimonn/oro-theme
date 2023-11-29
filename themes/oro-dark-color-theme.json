@@ -145,6 +145,13 @@
                 "foreground": "#e0cd78"
             }
         },
+        // Macro-like.
+        {
+            "scope": "entity.name.function.preprocessor",
+            "settings": {
+                "foreground": "#a0a0a0"
+            }
+        },
         // Function-like.
         {
             "scope": "entity.name.function",
