@@ -11,6 +11,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Improved markup styling; markdown is unchanged, but other markup formats
   should see better coloring now
+- Improved macro coloring; now they will also be colored via syntax
+  highlighting, not just semantic
 
 ## [1.2.0] - 2023-10-25
 
