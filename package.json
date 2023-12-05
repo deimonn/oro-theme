@@ -23,9 +23,9 @@
     "contributes": {
         "themes": [
             {
-                "label": "Oro Dark Theme",
+                "label": "Oro Theme",
                 "uiTheme": "vs-dark",
-                "path": "./themes/oro-dark-color-theme.json"
+                "path": "./dist/mainTheme.json"
             }
         ]
     },
