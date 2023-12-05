@@ -28,5 +28,16 @@
                 "path": "./themes/oro-dark-color-theme.json"
             }
         ]
+    },
+    "scripts": {
+        "vscode:prepublish": "npm run compile",
+        "compile": "tsc -p ./ && node out/generate.js",
+        "watch": "tsc -watch -p ./",
+        "lint": "eslint src --ext ts"
+    },
+    "devDependencies": {
+        "@types/node": "20.x",
+        "eslint": "^8.55.0",
+        "typescript": "^5.3.2"
     }
 }
