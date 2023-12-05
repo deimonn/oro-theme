@@ -3,6 +3,7 @@
 .gitignore
 .yarnrc
 src/**
+out/**
 **/tsconfig.json
 **/.eslintrc.json
 **/*.map
