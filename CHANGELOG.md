@@ -5,6 +5,29 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.0.0] - 2023-12-05
+
+### Added
+
+- New theme variant; "Oro Theme (Italics)"
+
+### Changed
+
+- Extension has a new logo
+- Extension name shortened to just "Oro Theme"
+- Main theme renamed to "Oro Theme" (may need updating in settings)
+- Severe changes to the internal project structure
+  - Theme is now programatically generated, reducing amount of possible bugs
+  - The groundwork has been made to allow for easy creation of more theme
+    variants in the future
+
+### Fixed
+
+- Fixed enum members having different colors when colored by syntax highlighting
+  vs semantic
+- Fixed comments having different colors when colored by syntax highlighting vs
+  semantic
+
 ## [1.3.0] - 2023-11-29
 
 ### Added
@@ -61,7 +84,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Initial release
 
-[Unreleased]: https://github.com/deimonn/oro-theme/compare/v1.3.0...HEAD
+[Unreleased]: https://github.com/deimonn/oro-theme/compare/v2.0.0...HEAD
+[2.0.0]: https://github.com/deimonn/oro-theme/compare/v1.3.0...v2.0.0
 [1.3.0]: https://github.com/deimonn/oro-theme/compare/v1.2.0...v1.3.0
 [1.2.0]: https://github.com/deimonn/oro-theme/compare/v1.1.0...v1.2.0
 [1.1.0]: https://github.com/deimonn/oro-theme/compare/v1.0.3...v1.1.0
