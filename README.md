@@ -1,4 +1,4 @@
-# Oro Dark Theme
+# Oro Theme
 
 This is a small theme I made for personal use. It was made to be aesthetically
 pleasing while keeping a good amount of visual distinction between different
