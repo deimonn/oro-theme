@@ -1,4 +1,10 @@
 .vscode/**
 .vscode-test/**
-example/**
 .gitignore
+.yarnrc
+src/**
+**/tsconfig.json
+**/.eslintrc.json
+**/*.map
+**/*.ts
+screenshot.png
