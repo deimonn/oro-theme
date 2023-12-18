@@ -3,8 +3,8 @@
 
   This file is licensed under the MIT License.
 
-  See https://github.com/deimonn/oro-theme/blob/master/LICENSE for license
-  information.
+  See https://raw.githubusercontent.com/deimonn/oro-theme/master/LICENSE for
+  license information.
  *────────────────────────────────────────────────────────────────────────────*/
 
 import { TokenStyle, scopeStyle } from './style'
