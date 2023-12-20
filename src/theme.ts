@@ -155,6 +155,8 @@ export function generateThemeJSON(theme: Theme) {
             "*.modification": { fontStyle: "underline" },
             "*.mutable":      { fontStyle: "underline" }, // in rust-analyzer
             "*.consuming":    { fontStyle: "bold" },      // in rust-analyzer
+            "*.usedAsMutableReference": { fontStyle: "underline" }, // in clangd
+            "*.usedAsMutablePointer":   { fontStyle: "underline" }, // in clangd
         },
         tokenColors: [
             // Invalid.
