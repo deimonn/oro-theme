@@ -38,7 +38,8 @@
         "vscode:prepublish": "npm run compile",
         "compile": "tsc -p ./ && node out/generate.js",
         "watch": "tsc -watch -p ./",
-        "lint": "eslint src --ext ts"
+        "lint": "eslint src --ext ts",
+        "deploy": "vsce publish"
     },
     "devDependencies": {
         "@types/node": "20.x",
