@@ -11,8 +11,18 @@
     },
     "icon": "assets/logo.png",
     "keywords": [
-        "dark", "theme", "oro", "white", "gold", "teal",
-        "rust", "c", "cpp", "c++", "csharp", "c#"
+        "dark",
+        "theme",
+        "oro",
+        "white",
+        "gold",
+        "teal",
+        "rust",
+        "c",
+        "cpp",
+        "c++",
+        "csharp",
+        "c#"
     ],
     "engines": {
         "vscode": "^1.59.0"
