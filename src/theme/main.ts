@@ -7,7 +7,7 @@
   license information.
  *────────────────────────────────────────────────────────────────────────────*/
 
-import { Theme } from '../theme'
+import { Theme } from "../theme"
 
 /** Main theme definition. */
 export let mainTheme: Theme = {

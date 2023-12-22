@@ -7,7 +7,7 @@
   license information.
  *────────────────────────────────────────────────────────────────────────────*/
 
-import { TokenStyle, scopeStyle } from './style'
+import { TokenStyle, scopeStyle } from "./style"
 
 /** Theme definition object. */
 export type Theme = {
@@ -333,10 +333,10 @@ export function generateThemeJSON(theme: Theme) {
         ],
         colors: {
             "editor.background": "#161616",
-            "editorError.background": theme.error + '7f',
+            "editorError.background": theme.error + "7f",
             "editorError.border": theme.error,
             "editorError.foreground": theme.error,
-            "editorWarning.background": theme.warning + '7f',
+            "editorWarning.background": theme.warning + "7f",
             "editorWarning.border": theme.warning,
             "editorWarning.foreground": theme.warning,
             "list.errorForeground": theme.error,
@@ -364,9 +364,9 @@ export function generateThemeJSON(theme: Theme) {
             "input.border": theme.ui.border,
             "peekView.border": theme.ui.accent,
             "peekViewEditor.background": "#202020",
-            "peekViewEditor.matchHighlightBackground": theme.ui.accent + '62',
+            "peekViewEditor.matchHighlightBackground": theme.ui.accent + "62",
             "peekViewEditorGutter.background": "#202020",
-            "peekViewResult.matchHighlightBackground": theme.ui.accent + '62',
+            "peekViewResult.matchHighlightBackground": theme.ui.accent + "62",
             "sideBar.background": "#1C1C1C",
             "sideBarSectionHeader.background": "#1C1C1C",
             "statusBar.background": theme.ui.button,

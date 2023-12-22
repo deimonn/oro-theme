@@ -7,7 +7,7 @@
   license information.
  *────────────────────────────────────────────────────────────────────────────*/
 
-import { Theme } from '../theme'
+import { Theme } from "../theme"
 
 /** Italics theme definition. */
 export let italicsTheme: Theme = {

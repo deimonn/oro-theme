@@ -7,12 +7,12 @@
   license information.
  *────────────────────────────────────────────────────────────────────────────*/
 
-import { generateThemeJSON } from './theme'
+import { generateThemeJSON } from "./theme"
 
-import { mainTheme } from './theme/main'
-import { italicsTheme } from './theme/italics'
+import { mainTheme } from "./theme/main"
+import { italicsTheme } from "./theme/italics"
 
-import * as fs from 'fs'
+import * as fs from "fs"
 
 // Generate theme JSON files.
 for (const theme of [mainTheme, italicsTheme]) {

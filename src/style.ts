@@ -37,22 +37,22 @@ export type ScopeStyle = {
 
 /** Converts a token style into a scope style.  */
 export function scopeStyle(token: TokenStyle): ScopeStyle {
-    if (typeof token === 'string') {
+    if (typeof token === "string") {
         return {
             foreground: token,
-            fontStyle: ''
+            fontStyle: ""
         }
     } else {
         let fontStyles: string[] = []
 
-        if (token.bold) { fontStyles.push('bold') }
-        if (token.italic) { fontStyles.push('italic') }
-        if (token.strikethrough) { fontStyles.push('strikethrough') }
-        if (token.underline) { fontStyles.push('underline') }
+        if (token.bold) { fontStyles.push("bold") }
+        if (token.italic) { fontStyles.push("italic") }
+        if (token.strikethrough) { fontStyles.push("strikethrough") }
+        if (token.underline) { fontStyles.push("underline") }
 
         return {
             foreground: token.foreground,
-            fontStyle: fontStyles.join(' ')
+            fontStyle: fontStyles.join(" ")
         }
     }
 }
