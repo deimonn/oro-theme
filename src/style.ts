@@ -43,7 +43,7 @@ export function scopeStyle(token: TokenStyle): ScopeStyle {
             fontStyle: ""
         }
     } else {
-        let fontStyles: string[] = []
+        const fontStyles: string[] = []
 
         if (token.bold) { fontStyles.push("bold") }
         if (token.italic) { fontStyles.push("italic") }

@@ -10,7 +10,7 @@
 import { Theme } from "../theme"
 
 /** Italics theme definition. */
-export let italicsTheme: Theme = {
+export const italicsTheme: Theme = {
     name: "Oro Theme (Italics)",
     filename: "italicsTheme.json",
 

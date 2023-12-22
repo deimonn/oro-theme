@@ -10,7 +10,7 @@
 import { Theme } from "../theme"
 
 /** Main theme definition. */
-export let mainTheme: Theme = {
+export const mainTheme: Theme = {
     name: "Oro Theme",
     filename: "mainTheme.json",
 
