@@ -1,3 +1,19 @@
+# Temporary files created by various text editors.
+*~
+
+# Merge files created by git.
+*.orig
+# Reject files created by git.
+*.rej
+
+# Vim swap files.
+.*.sw?
+.sw?
+
+# OS X specific files.
+.DS_store
+
+# Build artifacts and outputs.
 /out
 /dist
 /node_modules
