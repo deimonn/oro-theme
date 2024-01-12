@@ -1,6 +1,6 @@
 /*─ theme.ts ─────────────────────────────────────────────────────────────────*
-  Defines the `Theme` object and the `generateThemeJSON` function, which
-  converts it into the JSON format that VSCode expects for themes.
+  Defines the `OroTheme` object and the `generateVSCodeTheme` function, which
+  converts it into the format which VSCode expects for themes.
  *────────────────────────────────────────────────────────────────────────────*
   Copyright (c) 2023-2024 Deimonn (a.k.a. Nahuel S. Cisterna)
 
@@ -10,11 +10,11 @@
   license information.
  *────────────────────────────────────────────────────────────────────────────*/
 
-import { VSCodeTheme } from "./vscode/theme"
+import { VSCodeTheme } from "../vscode/theme"
 import { TokenStyle, scopeStyle } from "./style"
 
-/** Theme definition object. */
-export type Theme = {
+/** Oro theme definition object. */
+export type OroTheme = {
     /** The name to give to the theme. */
     name: string
     /** The name to give to the theme file. */
@@ -82,8 +82,8 @@ export type Theme = {
     }
 }
 
-/** Generate VSCode theme from theme definition object. */
-export function generateVSCodeTheme(theme: Theme): VSCodeTheme {
+/** Generate a VSCode theme from an Oro theme definition object. */
+export function generateVSCodeTheme(theme: OroTheme): VSCodeTheme {
     return {
         semanticHighlighting: true,
         semanticTokenColors: {

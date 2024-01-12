@@ -9,9 +9,9 @@
   license information.
  *────────────────────────────────────────────────────────────────────────────*/
 
-import { generateVSCodeTheme } from "./theme"
+import { generateVSCodeTheme } from "./oro/theme"
 
-import { mainTheme, mainThemeItalics } from "./theme/main"
+import { mainTheme, mainThemeItalics } from "./oro/themes/main"
 
 import * as fs from "fs"
 

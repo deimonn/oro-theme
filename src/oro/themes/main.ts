@@ -9,10 +9,10 @@
   license information.
  *────────────────────────────────────────────────────────────────────────────*/
 
-import { Theme } from "../theme"
+import { OroTheme } from "../theme"
 
 /** Main theme definition. */
-export function mainTheme(): Theme {
+export function mainTheme(): OroTheme {
     return {
         name: "Oro Theme",
         filename: "mainTheme.json",
@@ -55,7 +55,7 @@ export function mainTheme(): Theme {
 }
 
 /** Definition of the italics variant of the main theme. */
-export function mainThemeItalics(): Theme {
+export function mainThemeItalics(): OroTheme {
     const theme = mainTheme()
 
     theme.name = "Oro Theme (Italics)"
