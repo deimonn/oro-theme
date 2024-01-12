@@ -9,7 +9,7 @@
   license information.
  *────────────────────────────────────────────────────────────────────────────*/
 
-import { generateThemeJSON } from "./theme"
+import { generateVSCodeTheme } from "./theme"
 
 import { mainTheme, mainThemeItalics } from "./theme/main"
 
@@ -22,5 +22,8 @@ if (!fs.existsSync("dist")) {
 
 // Generate theme JSON files.
 for (const theme of [mainTheme(), mainThemeItalics()]) {
-    fs.writeFileSync(`dist/${theme.filename}`, generateThemeJSON(theme))
+    fs.writeFileSync(
+        `dist/${theme.filename}`,
+        JSON.stringify(generateVSCodeTheme(theme))
+    )
 }

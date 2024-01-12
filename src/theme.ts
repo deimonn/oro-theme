@@ -10,6 +10,7 @@
   license information.
  *────────────────────────────────────────────────────────────────────────────*/
 
+import { VSCodeTheme } from "./vscode/theme"
 import { TokenStyle, scopeStyle } from "./style"
 
 /** Theme definition object. */
@@ -81,11 +82,9 @@ export type Theme = {
     }
 }
 
-/** Generate theme JSON from a theme definition object. */
-export function generateThemeJSON(theme: Theme): string {
-    return JSON.stringify({
-        $schema: "vscode://schemas/color-theme",
-        name: theme.name,
+/** Generate VSCode theme from theme definition object. */
+export function generateVSCodeTheme(theme: Theme): VSCodeTheme {
+    return {
         semanticHighlighting: true,
         semanticTokenColors: {
             // User type.
@@ -382,5 +381,5 @@ export function generateThemeJSON(theme: Theme): string {
             "titleBar.activeBackground": "#1C1C1C",
             "titleBar.inactiveBackground": "#1C1C1C",
         }
-    })
+    }
 }
