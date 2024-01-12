@@ -82,7 +82,7 @@ export type Theme = {
 }
 
 /** Generate theme JSON from a theme definition object. */
-export function generateThemeJSON(theme: Theme) {
+export function generateThemeJSON(theme: Theme): string {
     return JSON.stringify({
         $schema: "vscode://schemas/color-theme",
         name: theme.name,
