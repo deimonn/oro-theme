@@ -30,11 +30,14 @@ export type VSCodeTokenColor = string | {
     /** The scope or scopes that the rule applies to. */
     scope: string | string[]
     /** Rule style settings. */
-    settings: {
-        fontStyle?: string
-        foreground?: string
-        background?: string
-    }
+    settings: VSCodeTokenColorSettings
+}
+
+/** Style settings for token color. */
+export type VSCodeTokenColorSettings = {
+    fontStyle?: string
+    foreground?: string
+    background?: string
 }
 
 /**
