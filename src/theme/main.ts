@@ -53,3 +53,28 @@ export function mainTheme(): Theme {
         }
     }
 }
+
+/** Definition of the italics variant of the main theme. */
+export function mainThemeItalics(): Theme {
+    const theme = mainTheme()
+
+    theme.name = "Oro Theme (Italics)"
+    theme.filename = "mainThemeItalics.json"
+
+    theme.keyword = {
+        foreground: theme.keyword as string,
+        italic: true
+    }
+
+    theme.builtinType = {
+        foreground: theme.builtinType as string,
+        italic: true
+    }
+
+    theme.builtinConstant = {
+        foreground: theme.builtinConstant as string,
+        italic: true
+    }
+
+    return theme
+}
