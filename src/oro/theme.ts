@@ -1,4 +1,4 @@
-/*─ theme.ts ─────────────────────────────────────────────────────────────────*
+/*─ oro/theme.ts ─────────────────────────────────────────────────────────────*
   Defines the `OroTheme` object and the `generateVSCodeTheme` function, which
   converts it into the format which VSCode expects for themes.
  *────────────────────────────────────────────────────────────────────────────*
