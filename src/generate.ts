@@ -1,5 +1,7 @@
-/*────────────────────────────────────────────────────────────────────────────*
-  Copyright (c) 2023 Deimonn (a.k.a. Nahuel S. Cisterna)
+/*─ generate.ts ──────────────────────────────────────────────────────────────*
+  Generates the actual theme JSON files for distribution.
+ *────────────────────────────────────────────────────────────────────────────*
+  Copyright (c) 2023-2024 Deimonn (a.k.a. Nahuel S. Cisterna)
 
   This file is licensed under the MIT License.
 

@@ -1,5 +1,8 @@
-/*────────────────────────────────────────────────────────────────────────────*
-  Copyright (c) 2023 Deimonn (a.k.a. Nahuel S. Cisterna)
+/*─ theme.ts ─────────────────────────────────────────────────────────────────*
+  Defines the `Theme` object and the `generateThemeJSON` function, which
+  converts it into the JSON format that VSCode expects for themes.
+ *────────────────────────────────────────────────────────────────────────────*
+  Copyright (c) 2023-2024 Deimonn (a.k.a. Nahuel S. Cisterna)
 
   This file is licensed under the MIT License.
 

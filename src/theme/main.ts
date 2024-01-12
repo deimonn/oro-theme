@@ -1,5 +1,7 @@
-/*────────────────────────────────────────────────────────────────────────────*
-  Copyright (c) 2023 Deimonn (a.k.a. Nahuel S. Cisterna)
+/*─ theme/main.ts ────────────────────────────────────────────────────────────*
+  Defines the main, original Oro Theme, as well as its italics variant.
+ *────────────────────────────────────────────────────────────────────────────*
+  Copyright (c) 2023-2024 Deimonn (a.k.a. Nahuel S. Cisterna)
 
   This file is licensed under the MIT License.
 

@@ -1,5 +1,8 @@
-/*────────────────────────────────────────────────────────────────────────────*
-  Copyright (c) 2023 Deimonn (a.k.a. Nahuel S. Cisterna)
+/*─ style.ts ─────────────────────────────────────────────────────────────────*
+  Defines the `TokenStyle` and `ScopeStyle` objects, as well as the
+  `scopeStyle` function which converts from the former to the latter.
+ *────────────────────────────────────────────────────────────────────────────*
+  Copyright (c) 2023-2024 Deimonn (a.k.a. Nahuel S. Cisterna)
 
   This file is licensed under the MIT License.
 
