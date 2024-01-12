@@ -40,7 +40,7 @@
             {
                 "label": "Oro Theme (Italics)",
                 "uiTheme": "vs-dark",
-                "path": "./dist/italicsTheme.json"
+                "path": "./dist/mainThemeItalics.json"
             }
         ]
     },
