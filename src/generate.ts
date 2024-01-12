@@ -15,6 +15,11 @@ import { mainTheme, mainThemeItalics } from "./theme/main"
 
 import * as fs from "fs"
 
+// Create `dist` directory.
+if (!fs.existsSync("dist")) {
+    fs.mkdirSync("dist")
+}
+
 // Generate theme JSON files.
 for (const theme of [mainTheme(), mainThemeItalics()]) {
     fs.writeFileSync(`dist/${theme.filename}`, generateThemeJSON(theme))
