@@ -11,12 +11,11 @@
 
 import { generateThemeJSON } from "./theme"
 
-import { mainTheme } from "./theme/main"
-import { italicsTheme } from "./theme/italics"
+import { mainTheme, mainThemeItalics } from "./theme/main"
 
 import * as fs from "fs"
 
 // Generate theme JSON files.
-for (const theme of [mainTheme, italicsTheme]) {
+for (const theme of [mainTheme(), mainThemeItalics()]) {
     fs.writeFileSync(`dist/${theme.filename}`, generateThemeJSON(theme))
 }
