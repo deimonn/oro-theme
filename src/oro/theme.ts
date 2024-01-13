@@ -84,7 +84,7 @@ export type OroTheme = {
     }
 }
 
-/** Build theme styles and colors. */
+/** Built theme styles and colors. */
 export type BuiltTheme = {
     /** Style for keywords. */
     keyword: BuiltStyle
