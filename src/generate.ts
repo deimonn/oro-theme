@@ -141,7 +141,8 @@ function generateTheme(theme: OroTheme): VSCodeTheme {
             {
                 scope: "invalid.illegal",
                 settings: {
-                    foreground: built.error
+                    foreground: built.error,
+                    fontStyle: ""
                 }
             },
             // User type.
