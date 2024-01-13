@@ -11,7 +11,9 @@
  *────────────────────────────────────────────────────────────────────────────*/
 
 import { VSCodeTheme } from "../vscode/theme"
-import { TokenStyle, scopeStyle } from "./style"
+
+import { OroColor, BuiltColor, buildColor } from "./color"
+import { OroStyle, BuiltStyle, buildStyle } from "./style"
 
 /** Oro theme definition object. */
 export type OroTheme = {
@@ -21,150 +23,282 @@ export type OroTheme = {
     filename: string
 
     /** Style for keywords. */
-    keyword: TokenStyle
+    keyword: OroStyle
     /** Style for operators. */
-    operator: TokenStyle
+    operator: OroStyle
 
     /** Style for user-defined types, such as classes. */
-    userType: TokenStyle
+    userType: OroStyle
     /** Style for built-in types. */
-    builtinType: TokenStyle
+    builtinType: OroStyle
     /** Style for interface or interface-like types. */
-    interfaceType: TokenStyle
+    interfaceType: OroStyle
 
     /** Style for functions. */
-    function: TokenStyle
+    function: OroStyle
     /** Style for static functions. */
-    staticFunction: TokenStyle
+    staticFunction: OroStyle
 
     /** Style for constants and enumeration members. */
-    constant: TokenStyle
+    constant: OroStyle
     /** Style for built-in constants, such as `true`. */
-    builtinConstant: TokenStyle
+    builtinConstant: OroStyle
 
     /** Style for enumerations. */
-    enumeration: TokenStyle
+    enumeration: OroStyle
     /** Style for namespaces. */
-    namespace: TokenStyle
+    namespace: OroStyle
     /** Style for macros. */
-    macro: TokenStyle
+    macro: OroStyle
     /** Style for variables. */
-    variable: TokenStyle
+    variable: OroStyle
     /** Style for numbers. */
-    number: TokenStyle
+    number: OroStyle
     /** Style for punctuation. */
-    punctuation: TokenStyle
+    punctuation: OroStyle
     /** Style for comments. */
-    comment: TokenStyle
+    comment: OroStyle
 
     /** Style for strings. */
-    string: TokenStyle
+    string: OroStyle
     /** Style for escape sequences. */
-    escape: TokenStyle
+    escape: OroStyle
 
     /** Color for errors and illegal code. */
-    error: string
+    error: OroColor
     /** Color for warnings. */
-    warning: string
+    warning: OroColor
     /** Link color. */
-    link: string
+    link: OroColor
 
     /** UI dark accent color. */
     ui: {
         /** Accenting color. */
-        accent: string
+        accent: OroColor
         /** Dark color currently only used for input borders. */
-        border: string
+        border: OroColor
         /** Button and status bar color. */
-        button: string
+        button: OroColor
         /** Button color on hover. */
-        buttonHover: string
+        buttonHover: OroColor
+    }
+}
+
+/** Build theme styles and colors. */
+export type BuiltTheme = {
+    /** Style for keywords. */
+    keyword: BuiltStyle
+    /** Style for operators. */
+    operator: BuiltStyle
+
+    /** Style for user-defined types, such as classes. */
+    userType: BuiltStyle
+    /** Style for built-in types. */
+    builtinType: BuiltStyle
+    /** Style for interface or interface-like types. */
+    interfaceType: BuiltStyle
+
+    /** Style for functions. */
+    function: BuiltStyle
+    /** Style for static functions. */
+    staticFunction: BuiltStyle
+
+    /** Style for constants and enumeration members. */
+    constant: BuiltStyle
+    /** Style for built-in constants, such as `true`. */
+    builtinConstant: BuiltStyle
+
+    /** Style for enumerations. */
+    enumeration: BuiltStyle
+    /** Style for namespaces. */
+    namespace: BuiltStyle
+    /** Style for macros. */
+    macro: BuiltStyle
+    /** Style for variables. */
+    variable: BuiltStyle
+    /** Style for numbers. */
+    number: BuiltStyle
+    /** Style for punctuation. */
+    punctuation: BuiltStyle
+    /** Style for comments. */
+    comment: BuiltStyle
+
+    /** Style for strings. */
+    string: BuiltStyle
+    /** Style for escape sequences. */
+    escape: BuiltStyle
+
+    /** Color for errors and illegal code. */
+    error: BuiltColor
+    /** Color for warnings. */
+    warning: BuiltColor
+    /** Link color. */
+    link: BuiltColor
+
+    /** UI dark accent color. */
+    ui: {
+        /** Accenting color. */
+        accent: BuiltColor
+        /** Dark color currently only used for input borders. */
+        border: BuiltColor
+        /** Button and status bar color. */
+        button: BuiltColor
+        /** Button color on hover. */
+        buttonHover: BuiltColor
+    }
+}
+
+/** Builds an Oro theme definition. */
+export function buildTheme(theme: OroTheme): BuiltTheme {
+    return {
+        keyword: buildStyle(theme.keyword),
+        operator: buildStyle(theme.operator),
+
+        userType: buildStyle(theme.userType),
+        builtinType: buildStyle(theme.builtinType),
+        interfaceType: buildStyle(theme.interfaceType),
+
+        function: buildStyle(theme.function),
+        staticFunction: buildStyle(theme.staticFunction),
+
+        constant: buildStyle(theme.constant),
+        builtinConstant: buildStyle(theme.builtinConstant),
+
+        enumeration: buildStyle(theme.enumeration),
+        namespace: buildStyle(theme.namespace),
+        macro: buildStyle(theme.macro),
+        variable: buildStyle(theme.variable),
+        number: buildStyle(theme.number),
+        punctuation: buildStyle(theme.punctuation),
+        comment: buildStyle(theme.comment),
+
+        string: buildStyle(theme.string),
+        escape: buildStyle(theme.escape),
+
+        error: buildColor(theme.error),
+        warning: buildColor(theme.warning),
+        link: buildColor(theme.link),
+
+        ui: {
+            accent: buildColor(theme.ui.accent),
+            border: buildColor(theme.ui.border),
+            button: buildColor(theme.ui.button),
+            buttonHover: buildColor(theme.ui.buttonHover)
+        }
     }
 }
 
 /** Generate a VSCode theme from an Oro theme definition object. */
 export function generateVSCodeTheme(theme: OroTheme): VSCodeTheme {
+    const built = buildTheme(theme)
+
     return {
         semanticHighlighting: true,
         semanticTokenColors: {
-            // User type.
-            class: theme.userType,
-            struct: theme.userType,
-            type: theme.userType,
+            /*─ Types ───────────────────────────────────────────*/
 
-            // Built-in type.
-            builtinType: theme.builtinType, // in rust-analyzer
+            // User-defined types.
+            class: built.userType.semanticTokenColor,
+            struct: built.userType.semanticTokenColor,
+            type: built.userType.semanticTokenColor,
 
-            // Interface-like type.
-            typeParameter: theme.interfaceType,
-            interface: theme.interfaceType,
-            derive: theme.interfaceType, // in rust-analyzer
+            // Interface-like types.
+            typeParameter: built.interfaceType.semanticTokenColor,
+            interface: built.interfaceType.semanticTokenColor,
 
-            // Enumeration.
-            enum: theme.enumeration,
-            enumMember: theme.constant,
+            // Enumeration types.
+            enum: built.enumeration.semanticTokenColor,
+            enumMember: built.constant.semanticTokenColor,
 
-            // Namespace.
-            namespace: theme.namespace,
+            // Built-in types in rust-analyzer.
+            builtinType: built.builtinType.semanticTokenColor,
+            // Derives in rust-analyzer.
+            derive: built.interfaceType.semanticTokenColor,
+
+            /*─ Keywords ─────────────────────────────────────────────────────*/
 
             // Keywords, modifiers and operations.
-            keyword: theme.keyword,
-            operator: theme.operator,
-            lifetime: theme.keyword,      // in rust-analyzer
-            selfParameter: theme.keyword, // in Pylance
-            clsParameter: theme.keyword,  // in Pylance
+            keyword: built.keyword.semanticTokenColor,
+            operator: built.operator.semanticTokenColor,
+
+            // Keywords in Pylance.
+            selfParameter: built.keyword.semanticTokenColor,
+            clsParameter: built.keyword.semanticTokenColor,
+
+            // Lifetimes in rust-analyzer.
+            lifetime: built.keyword.semanticTokenColor,
+
+            /*─ Function-like ────────────────────────────────────────────────*/
 
             // Function-like.
-            function: theme.function,
-            method: theme.function,
-            label: theme.function,
-            decorator: theme.function,
+            function: built.function.semanticTokenColor,
+            method: built.function.semanticTokenColor,
+            label: built.function.semanticTokenColor,
+            decorator: built.function.semanticTokenColor,
 
             // Static function-like.
-            "function.static": theme.staticFunction,
-            "method.static": theme.staticFunction,
+            "function.static": built.staticFunction.semanticTokenColor,
+            "method.static": built.staticFunction.semanticTokenColor,
 
-            // Macro.
-            macro: theme.macro,
+            // Macros.
+            macro: built.macro.semanticTokenColor,
+
+            /*─ Variables & constants ────────────────────────────────────────*/
 
             // Variable-like.
-            parameter: theme.variable,
-            property: theme.variable,
-            variable: theme.variable,
-            event: theme.variable,
-
-            // Constant.
-            boolean: theme.builtinConstant,         // in rust-analyzer
-            builtinConstant: theme.builtinConstant, // in Pylance
-
-            // Comment.
-            comment: theme.comment,
+            parameter: built.variable.semanticTokenColor,
+            property: built.variable.semanticTokenColor,
+            variable: built.variable.semanticTokenColor,
+            event: built.variable.semanticTokenColor,
 
             // String-like.
-            string: theme.string,
-            regexp: theme.string,
-            escapeSequence: theme.escape, // in rust-analyzer
+            string: built.string.semanticTokenColor,
+            regexp: built.string.semanticTokenColor,
 
-            // Number.
-            number: theme.number,
+            // Numbers.
+            number: built.number.semanticTokenColor,
 
-            // Punctuation.
-            punctuation: theme.punctuation,     // in rust-analyzer
-            formatSpecifier: theme.punctuation, // in rust-analyzer
+            // Escape sequences in rust-analyzer.
+            escapeSequence: built.escape.semanticTokenColor,
+            // Built-in constants in rust-analyzer.
+            boolean: built.builtinConstant.semanticTokenColor,
+
+            // Built-in constants in Pylance.
+            builtinConstant: built.builtinConstant.semanticTokenColor,
+
+            /*─ Miscellaneous ────────────────────────────────────────────────*/
+
+            // Namespaces.
+            namespace: built.namespace.semanticTokenColor,
+
+            // Comments.
+            comment: built.comment.semanticTokenColor,
+
+            // Punctuation in rust-analyzer.
+            punctuation: built.punctuation.semanticTokenColor,
+            formatSpecifier: built.punctuation.semanticTokenColor,
+
+            /*─ Modifiers ────────────────────────────────────────────────────*/
 
             // Semantic modifiers.
             "*.deprecated":   { fontStyle: "strikethrough" },
             "*.modification": { fontStyle: "underline" },
-            "*.mutable":      { fontStyle: "underline" }, // in rust-analyzer
-            "*.consuming":    { fontStyle: "bold" },      // in rust-analyzer
-            "*.usedAsMutableReference": { fontStyle: "underline" }, // in clangd
-            "*.usedAsMutablePointer":   { fontStyle: "underline" }, // in clangd
+
+            // Modifiers in rust-analyzer.
+            "*.mutable":      { fontStyle: "underline" },
+            "*.consuming":    { fontStyle: "bold" },
+
+            // Modifiers in clangd.
+            "*.usedAsMutableReference": { fontStyle: "underline" },
+            "*.usedAsMutablePointer":   { fontStyle: "underline" }
         },
         tokenColors: [
             // Invalid.
             {
                 scope: "invalid.illegal",
-                settings: scopeStyle(theme.error)
+                settings: {
+                    foreground: built.error
+                }
             },
             // User type.
             {
@@ -173,7 +307,7 @@ export function generateVSCodeTheme(theme: OroTheme): VSCodeTheme {
                     "entity.name.type.class",
                     "entity.name.type.struct"
                 ],
-                settings: scopeStyle(theme.userType)
+                settings: built.userType.tokenColorSettings
             },
             // Built-in type.
             {
@@ -186,7 +320,7 @@ export function generateVSCodeTheme(theme: OroTheme): VSCodeTheme {
                     "support.type.primitive",
                     "keyword.type"
                 ],
-                settings: scopeStyle(theme.builtinType)
+                settings: built.builtinType.tokenColorSettings
             },
             // Interface-like type.
             {
@@ -194,40 +328,40 @@ export function generateVSCodeTheme(theme: OroTheme): VSCodeTheme {
                     "entity.name.type.interface",
                     "entity.name.type.parameter"
                 ],
-                settings: scopeStyle(theme.interfaceType)
+                settings: built.interfaceType.tokenColorSettings
             },
             // Enumeration.
             {
                 scope: "entity.name.type.enum",
-                settings: scopeStyle(theme.enumeration)
+                settings: built.enumeration.tokenColorSettings
             },
             {
                 scope: "variable.other.enummember",
-                settings: scopeStyle(theme.constant)
+                settings: built.constant.tokenColorSettings
             },
             // Namespace.
             {
                 scope: "entity.name.type.namespace",
-                settings: scopeStyle(theme.namespace)
+                settings: built.namespace.tokenColorSettings
             },
             // Keywords, modifiers and operators.
             {
                 scope: ["keyword", "storage", "variable.language"],
-                settings: scopeStyle(theme.keyword)
+                settings: built.keyword.tokenColorSettings
             },
             {
                 scope: "keyword.operator",
-                settings: scopeStyle(theme.operator)
+                settings: built.operator.tokenColorSettings
             },
             // Macro-like.
             {
                 scope: "entity.name.function.preprocessor",
-                settings: scopeStyle(theme.macro)
+                settings: built.macro.tokenColorSettings
             },
             // Function-like.
             {
                 scope: "entity.name.function",
-                settings: scopeStyle(theme.function)
+                settings: built.function.tokenColorSettings
             },
             // Variable-like.
             {
@@ -236,54 +370,54 @@ export function generateVSCodeTheme(theme: OroTheme): VSCodeTheme {
                     "entity.name.variable",
                     "entity.name.type.module"
                 ],
-                settings: scopeStyle(theme.variable)
+                settings: built.variable.tokenColorSettings
             },
             // Constant.
             {
                 scope: "constant",
-                settings: scopeStyle(theme.constant)
+                settings: built.constant.tokenColorSettings
             },
             {
                 scope: "constant.language",
-                settings: scopeStyle(theme.builtinConstant)
+                settings: built.builtinConstant.tokenColorSettings
             },
             // Comment.
             {
                 scope: ["comment", "punctuation.definition.comment"],
-                settings: scopeStyle(theme.comment)
+                settings: built.comment.tokenColorSettings
             },
             // String-like.
             {
                 scope: "string",
-                settings: scopeStyle(theme.string)
+                settings: built.string.tokenColorSettings
             },
             {
                 scope: "constant.character.escape",
-                settings: scopeStyle(theme.escape)
+                settings: built.escape.tokenColorSettings
             },
             // Number.
             {
                 scope: "constant.numeric",
-                settings: scopeStyle(theme.number)
+                settings: built.number.tokenColorSettings
             },
             // Punctuation.
             {
                 scope: "punctuation",
-                settings: scopeStyle(theme.punctuation)
+                settings: built.punctuation.tokenColorSettings
             },
             // Misc.
             {
                 scope: "entity.name.tag",
-                settings: scopeStyle(theme.constant)
+                settings: built.constant.tokenColorSettings
             },
             {
                 scope: "support.type.property-name",
-                settings: scopeStyle(theme.function)
+                settings: built.function.tokenColorSettings
             },
             // Markup header.
             {
                 scope: ["markup.heading", "entity.name.section"],
-                settings: scopeStyle(theme.keyword)
+                settings: built.keyword.tokenColorSettings
             },
             // Markup bold.
             {
@@ -320,62 +454,62 @@ export function generateVSCodeTheme(theme: OroTheme): VSCodeTheme {
                     "markup.inline.raw",
                     "fenced_code.block.language"
                 ],
-                settings: scopeStyle(theme.punctuation)
+                settings: built.punctuation.tokenColorSettings
             },
             // Markup quote.
             {
                 scope: "markup.quote",
-                settings: scopeStyle(theme.punctuation)
+                settings: built.punctuation.tokenColorSettings
             },
             // Markup list bullet.
             {
                 scope: "markup.list.bullet",
-                settings: scopeStyle(theme.punctuation)
+                settings: built.punctuation.tokenColorSettings
             }
         ],
         colors: {
             "editor.background": "#161616",
-            "editorError.background": theme.error + "7f",
-            "editorError.border": theme.error,
-            "editorError.foreground": theme.error,
-            "editorWarning.background": theme.warning + "7f",
-            "editorWarning.border": theme.warning,
-            "editorWarning.foreground": theme.warning,
-            "list.errorForeground": theme.error,
-            "list.warningForeground": theme.warning,
+            "editorError.background": built.error + "7f",
+            "editorError.border": built.error,
+            "editorError.foreground": built.error,
+            "editorWarning.background": built.warning + "7f",
+            "editorWarning.border": built.warning,
+            "editorWarning.foreground": built.warning,
+            "list.errorForeground": built.error,
+            "list.warningForeground": built.warning,
             "activityBar.activeBackground": "#1C1C1C",
-            "activityBar.activeBorder": theme.ui.accent,
-            "activityBar.activeFocusBorder": theme.ui.accent,
+            "activityBar.activeBorder": built.ui.accent,
+            "activityBar.activeFocusBorder": built.ui.accent,
             "activityBar.background": "#161616",
-            "activityBar.dropBorder": theme.ui.accent,
+            "activityBar.dropBorder": built.ui.accent,
             "activityBar.inactiveForeground": "#b9b9b9",
             "activityBarBadge.background": "#DDDDDD",
             "activityBarBadge.foreground": "#161616",
-            "button.background": theme.ui.button,
+            "button.background": built.ui.button,
             "button.foreground": "#DDDDDD",
-            "button.hoverBackground": theme.ui.buttonHover,
+            "button.hoverBackground": built.ui.buttonHover,
             "checkbox.background": "#303030",
             "dropdown.background": "#202020",
             "editor.foreground": "#DDDDDD",
             "editorGroupHeader.tabsBackground": "#1C1C1C",
             "editorLineNumber.activeForeground": "#b9b9b9",
             "editorLineNumber.foreground": "#5f5f5f",
-            "editorLink.activeForeground": theme.link,
-            "focusBorder": theme.ui.accent,
+            "editorLink.activeForeground": built.link,
+            "focusBorder": built.ui.accent,
             "input.background": "#202020",
-            "input.border": theme.ui.border,
-            "peekView.border": theme.ui.accent,
+            "input.border": built.ui.border,
+            "peekView.border": built.ui.accent,
             "peekViewEditor.background": "#202020",
-            "peekViewEditor.matchHighlightBackground": theme.ui.accent + "62",
+            "peekViewEditor.matchHighlightBackground": built.ui.accent + "62",
             "peekViewEditorGutter.background": "#202020",
-            "peekViewResult.matchHighlightBackground": theme.ui.accent + "62",
+            "peekViewResult.matchHighlightBackground": built.ui.accent + "62",
             "sideBar.background": "#1C1C1C",
             "sideBarSectionHeader.background": "#1C1C1C",
-            "statusBar.background": theme.ui.button,
+            "statusBar.background": built.ui.button,
             "tab.activeBackground": "#161616",
             "tab.inactiveBackground": "#1C1C1C",
-            "textLink.activeForeground": theme.link,
-            "textLink.foreground": theme.ui.accent,
+            "textLink.activeForeground": built.link,
+            "textLink.foreground": built.ui.accent,
             "textPreformat.foreground": "#ffffff",
             "textSeparator.foreground": "#161616",
             "titleBar.activeBackground": "#1C1C1C",
