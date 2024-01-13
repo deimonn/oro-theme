@@ -1,6 +1,6 @@
-/*─ style.ts ─────────────────────────────────────────────────────────────────*
-  Defines the `TokenStyle` and `ScopeStyle` objects, as well as the
-  `scopeStyle` function which converts from the former to the latter.
+/*─ oro/style.ts ─────────────────────────────────────────────────────────────*
+  Defines the `OroStyle` object, capable of describing any style in the
+  extension.
  *────────────────────────────────────────────────────────────────────────────*
   Copyright (c) 2023-2024 Deimonn (a.k.a. Nahuel S. Cisterna)
 
@@ -10,14 +10,16 @@
   license information.
  *────────────────────────────────────────────────────────────────────────────*/
 
-/**
- * Token style. Used for semantic tokens and for theme definition.
- *
- * Can be converted into a scope style via `scopeStyle()`.
- */
-export type TokenStyle = string | {
+import { OroColor, isOroColor, buildColor } from "./color"
+import {
+    VSCodeSemanticTokenColor,
+    VSCodeTokenColorSettings
+} from "../vscode/theme"
+
+/** Oro style. Describes how to style a token. Build with `buildStyle`. */
+export type OroStyle = OroColor | {
     /** The foreground color for the token. */
-    foreground: string
+    foreground: OroColor
     /** Render bold. */
     bold?: boolean
     /** Render in italics. */
@@ -28,34 +30,39 @@ export type TokenStyle = string | {
     underline?: boolean
 }
 
-/**
- * Scope style. Used for syntax highlighting based on TextMate scopes.
- */
-export type ScopeStyle = {
-    /** The foreground color for the scope. */
-    foreground: string
-    /** The font styles string for the scope. */
-    fontStyle: string
+/** Built oro style. */
+export type BuiltStyle = {
+    semanticTokenColor: VSCodeSemanticTokenColor
+    tokenColorSettings: VSCodeTokenColorSettings
 }
 
-/** Converts a token style into a scope style.  */
-export function scopeStyle(token: TokenStyle): ScopeStyle {
-    if (typeof token === "string") {
+/** Builds an Oro style. */
+export function buildStyle(style: OroStyle): BuiltStyle {
+    // Style is just a color.
+    if (isOroColor(style)) {
+        const foreground = buildColor(style)
         return {
-            foreground: token,
-            fontStyle: ""
+            semanticTokenColor: foreground,
+            tokenColorSettings: {
+                foreground,
+                fontStyle: ""
+            }
         }
-    } else {
-        const fontStyles: string[] = []
+    }
 
-        if (token.bold) { fontStyles.push("bold") }
-        if (token.italic) { fontStyles.push("italic") }
-        if (token.strikethrough) { fontStyles.push("strikethrough") }
-        if (token.underline) { fontStyles.push("underline") }
+    // Style makes use of font styles.
+    const foreground = buildColor(style.foreground)
+    let fontStyle: string | string[] = []
 
-        return {
-            foreground: token.foreground,
-            fontStyle: fontStyles.join(" ")
-        }
+    if (style.bold) { fontStyle.push("bold") }
+    if (style.italic) { fontStyle.push("italic") }
+    if (style.strikethrough) { fontStyle.push("strikethrough") }
+    if (style.underline) { fontStyle.push("underline") }
+
+    fontStyle = fontStyle.join(" ")
+
+    return {
+        semanticTokenColor: { foreground, fontStyle },
+        tokenColorSettings: { foreground, fontStyle }
     }
 }
