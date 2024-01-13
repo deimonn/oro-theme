@@ -84,64 +84,38 @@ export type OroTheme = {
 
 /** Built theme styles and colors. */
 export type BuiltTheme = {
-    /** Style for keywords. */
     keyword: BuiltStyle
-    /** Style for operators. */
     operator: BuiltStyle
 
-    /** Style for user-defined types, such as classes. */
     userType: BuiltStyle
-    /** Style for built-in types. */
     builtinType: BuiltStyle
-    /** Style for interface or interface-like types. */
     interfaceType: BuiltStyle
 
-    /** Style for functions. */
     function: BuiltStyle
-    /** Style for static functions. */
     staticFunction: BuiltStyle
 
-    /** Style for constants and enumeration members. */
     constant: BuiltStyle
-    /** Style for built-in constants, such as `true`. */
     builtinConstant: BuiltStyle
 
-    /** Style for enumerations. */
     enumeration: BuiltStyle
-    /** Style for namespaces. */
     namespace: BuiltStyle
-    /** Style for macros. */
     macro: BuiltStyle
-    /** Style for variables. */
     variable: BuiltStyle
-    /** Style for numbers. */
     number: BuiltStyle
-    /** Style for punctuation. */
     punctuation: BuiltStyle
-    /** Style for comments. */
     comment: BuiltStyle
 
-    /** Style for strings. */
     string: BuiltStyle
-    /** Style for escape sequences. */
     escape: BuiltStyle
 
-    /** Color for errors and illegal code. */
     error: BuiltColor
-    /** Color for warnings. */
     warning: BuiltColor
-    /** Link color. */
     link: BuiltColor
 
-    /** UI dark accent color. */
     ui: {
-        /** Accenting color. */
         accent: BuiltColor
-        /** Dark color currently only used for input borders. */
         border: BuiltColor
-        /** Button and status bar color. */
         button: BuiltColor
-        /** Button color on hover. */
         buttonHover: BuiltColor
     }
 }
