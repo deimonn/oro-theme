@@ -39,7 +39,7 @@ function generateTheme(theme: OroTheme): VSCodeTheme {
     return {
         semanticHighlighting: true,
         semanticTokenColors: {
-            /*─ Types ───────────────────────────────────────────*/
+            /*─ Types ────────────────────────────────────────────────────────*/
 
             // User-defined types.
             class: built.userType.semanticTokenColor,
