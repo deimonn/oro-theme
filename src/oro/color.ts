@@ -16,8 +16,8 @@ import { OroStyle } from "./style"
 
 /** Oro color. Either a hex color code string or a `Color` instance. */
 export type OroColor = string | Color
-/** Built color; essentially a hex color code string. */
-export type BuiltColor = string
+/** Built color; always a `Color` instance. */
+export type BuiltColor = Color
 
 /** Returns true if the style is an `OroColor` "instance". */
 export function isOroColor(style: OroStyle): style is OroColor {
@@ -25,13 +25,13 @@ export function isOroColor(style: OroStyle): style is OroColor {
 }
 
 /**
- * Builds a color. If its a `Color` instance, converts it into a hex color code
- * string.
+ * Builds a color. If its a hex color code string, converts it into a `Color`
+ * instance.
  */
 export function buildColor(color: OroColor): BuiltColor {
     if (typeof color == "string") {
-        return color
+        return new Color(color)
     } else {
-        return color.hexa()
+        return color
     }
 }

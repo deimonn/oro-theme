@@ -40,7 +40,7 @@ export type BuiltStyle = {
 export function buildStyle(style: OroStyle): BuiltStyle {
     // Style is just a color.
     if (isOroColor(style)) {
-        const foreground = buildColor(style)
+        const foreground = buildColor(style).hexa()
         return {
             semanticTokenColor: foreground,
             tokenColorSettings: {
@@ -51,7 +51,7 @@ export function buildStyle(style: OroStyle): BuiltStyle {
     }
 
     // Style makes use of font styles.
-    const foreground = buildColor(style.foreground)
+    const foreground = buildColor(style.foreground).hexa()
     let fontStyle: string | string[] = []
 
     if (style.bold) { fontStyle.push("bold") }
