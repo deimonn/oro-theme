@@ -9,6 +9,7 @@
   license information.
  *────────────────────────────────────────────────────────────────────────────*/
 
+import { OroColor } from "../color"
 import { OroTheme } from "../theme"
 
 /** Main theme definition. */
@@ -62,17 +63,17 @@ export function mainThemeItalics(): OroTheme {
     theme.filename = "mainThemeItalics.json"
 
     theme.keyword = {
-        foreground: theme.keyword as string,
+        foreground: theme.keyword as OroColor,
         italic: true
     }
 
     theme.builtinType = {
-        foreground: theme.builtinType as string,
+        foreground: theme.builtinType as OroColor,
         italic: true
     }
 
     theme.builtinConstant = {
-        foreground: theme.builtinConstant as string,
+        foreground: theme.builtinConstant as OroColor,
         italic: true
     }
 
