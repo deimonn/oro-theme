@@ -44,14 +44,51 @@ export function mainTheme(): OroTheme {
 
         error: "#E04444",
         warning: "#E0A243",
-        link: "#4EB3E2",
+        info: "#77D4D4",
 
-        ui: {
-            accent: "#70C2E7",
-            border: "#2E505F",
-            button: "#3A6375",
-            buttonHover: "#4F88A0"
-        }
+        added: "#63DBC1",
+        deleted: "#E04444",
+        ignored: "#787878",
+        modified: "#E0CD78",
+        untracked: "#63DBC1",
+
+        background: "#161616",
+        backgroundSecondary: "#1C1C1C",
+        backgroundPeek: "#202020",
+
+        foreground: "#DDDDDD",
+        foregroundInactive: "#B9B9B9",
+
+        preformat: "#FFFFFF",
+        accent: "#70C2E7",
+
+        guide: "#5F5F5F",
+        guideFocus: "#B9B9B9",
+
+        match: "#E4C693",
+        matchBorder: "#E4C693",
+
+        link: "#70C2E7",
+        linkHover: "#4EB3E2",
+
+        button: "#3A6375",
+        buttonHover: "#4F88A0",
+
+        input: "#202020",
+        inputBorder: "#2E505F",
+
+        widget: "#202020",
+        widgetBorder: "#404040",
+
+        checkbox: "#303030",
+
+        scrollBar: "#5F5F5F60",
+        scrollBarActive: "#B9B9B960",
+
+        statusBar: "#3A6375",
+        statusBarForeground: "#FFFFFF",
+        statusBarDebugging: "#812D2A",
+        statusBarNoFolder: "#98753C",
     }
 }
 
