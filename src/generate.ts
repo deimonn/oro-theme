@@ -414,8 +414,8 @@ function generateTheme(theme: OroTheme): VSCodeTheme {
             "editorSuggestWidget.border": built.widgetBorder.hex(),
             "editorSuggestWidget.highlightForeground": built.accent.hex(),
 
-            "editorWidget.background": "#302843",
-            "editorWidget.resizeBorder": "#42375d",
+            "editorWidget.background": built.widget.hex(),
+            "editorWidget.resizeBorder": built.widgetBorder.hex(),
 
             // Selection.
             "editor.selectionBackground": built.accent.fade(.80).hexa(),
