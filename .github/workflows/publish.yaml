@@ -20,8 +20,15 @@ jobs:
     - name: Install package dependencies
       run: npm install
 
-    - name: Build and publish extension
+    - name: Tag does not contain a preview label; build and publish normally
+      if: ${{ !endsWith(github.ref, '-preview') }}
       run: npm run deploy
+      env:
+        VSCE_PAT: ${{secrets.VSCE_PAT}}
+
+    - name: Tag contains preview label; build and publish a preview version
+      if: ${{ endsWith(github.ref, '-preview') }}
+      run: npm run deployPreview
       env:
         VSCE_PAT: ${{secrets.VSCE_PAT}}
 
@@ -31,5 +38,6 @@ jobs:
         files: '*.vsix'
         fail_on_unmatched_files: true
         body: See [CHANGELOG.md](https://github.com/deimonn/oro-theme/blob/master/CHANGELOG.md) for a list of additions, changes and fixes.
+        prerelease: ${{ endsWith(github.ref, '-preview') }}
       env:
         GITHUB_TOKEN: ${{github.token}}

@@ -48,7 +48,8 @@
         "vscode:prepublish": "npm run compile",
         "compile": "ts-node src/generate.ts",
         "lint": "eslint src --ext ts",
-        "deploy": "vsce publish"
+        "deploy": "vsce publish",
+        "deployPreview": "vsce publish --pre-release"
     },
     "devDependencies": {
         "@types/color": "^3.0.6",
