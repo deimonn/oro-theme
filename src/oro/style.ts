@@ -10,7 +10,7 @@
   license information.
  *────────────────────────────────────────────────────────────────────────────*/
 
-import { OroColor, isOroColor, buildColor } from "./color"
+import { OroColor, BuiltColor, isOroColor, buildColor } from "./color"
 import {
     VSCodeSemanticTokenColor,
     VSCodeTokenColorSettings
@@ -34,24 +34,26 @@ export type OroStyle = OroColor | {
 export type BuiltStyle = {
     semanticTokenColor: VSCodeSemanticTokenColor
     tokenColorSettings: VSCodeTokenColorSettings
+    color: BuiltColor
 }
 
 /** Builds an Oro style. */
 export function buildStyle(style: OroStyle): BuiltStyle {
     // Style is just a color.
     if (isOroColor(style)) {
-        const foreground = buildColor(style).hexa()
+        const color = buildColor(style)
         return {
-            semanticTokenColor: foreground,
+            semanticTokenColor: color.hexa(),
             tokenColorSettings: {
-                foreground,
+                foreground: color.hexa(),
                 fontStyle: ""
-            }
+            },
+            color
         }
     }
 
     // Style makes use of font styles.
-    const foreground = buildColor(style.foreground).hexa()
+    const color = buildColor(style.foreground)
     let fontStyle: string | string[] = []
 
     if (style.bold) { fontStyle.push("bold") }
@@ -62,7 +64,8 @@ export function buildStyle(style: OroStyle): BuiltStyle {
     fontStyle = fontStyle.join(" ")
 
     return {
-        semanticTokenColor: { foreground, fontStyle },
-        tokenColorSettings: { foreground, fontStyle }
+        semanticTokenColor: { foreground: color.hexa(), fontStyle },
+        tokenColorSettings: { foreground: color.hexa(), fontStyle },
+        color
     }
 }
