@@ -5,7 +5,38 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-<!-- ## [Unreleased](https://github.com/deimonn/oro-theme/compare/v2.1.1...HEAD) -->
+## [2.2.0](https://github.com/deimonn/oro-theme/compare/v2.1.1...v2.2.0-preview) (Pre-release) - 2024-01-14
+
+### Added
+
+- Added missing foreground styles
+- Added style for `info` diagnostics
+- Added style for diagnostic messages in the settings interface
+- Added style for diagnostic icons in problems and notifications
+- Added styles for diagnostic problem navigation
+- Added style for diagnostic markers in the overview ruler and minimap
+- Added styles for "added", "deleted", "ignored", "modified" and "untracked"
+  resources and settings
+- Added styles for selection and search highlighting
+- Added styles for indentation guides
+- Added styles for line folds
+- Added styles for a lot of widgets, such as the hover and auto-complete widgets
+- Added styles for tabs when the "single tab" setting is enabled
+- Added style for drop backgrounds
+- Added unique styles for the status bar when debugging code or when no folders
+  are open
+- Added special styles for the [ErrorLens](https://marketplace.visualstudio.com/items?itemName=usernamehw.errorlens)
+  extension
+- And various other miscellaneous styles
+
+### Changed
+
+- Changed style of dropdowns to be more inline with other controls
+- Changed style of editor tabs; you can more noticeably see which one you're
+  hovering over now, as well as easily tell which tab is currently active
+- Changed style of the peek view
+- Changed hover style of the "Open a Remote Window" status bar item
+- Changed a whole lot of theme generation internals
 
 ## [2.1.1](https://github.com/deimonn/oro-theme/compare/v2.1.0...v2.1.1) - 2023-12-20
 
