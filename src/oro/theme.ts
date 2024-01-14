@@ -66,20 +66,83 @@ export type OroTheme = {
     error: OroColor
     /** Color for warnings. */
     warning: OroColor
+    /** Color for info. */
+    info: OroColor
+
+    /** Color for added resources. */
+    added: OroColor
+    /** Color for deleted resources. */
+    deleted: OroColor
+    /** Color for ignored resources. */
+    ignored: OroColor
+    /** Color for modified resources and settings. */
+    modified: OroColor
+    /** Color for untracked resources. */
+    untracked: OroColor
+
+    /** Main background color; e.g. the editor's. */
+    background: OroColor
+    /** Secondary background color; e.g. the sidebar's. */
+    backgroundSecondary: OroColor
+    /** Peek background color. */
+    backgroundPeek: OroColor
+
+    /** Default foreground color. */
+    foreground: OroColor
+    /** Inactive foreground color. */
+    foregroundInactive: OroColor
+
+    /** Preformatted text color. */
+    preformat: OroColor
+    /** Color for accenting, focus and highlighting. */
+    accent: OroColor
+
+    /** Guide color; e.g. indentation, line numbers. */
+    guide: OroColor
+    /** Focused guide color. */
+    guideFocus: OroColor
+
+    /** Color for search matches. */
+    match: OroColor
+    /** Border color for the focused match. */
+    matchBorder: OroColor
+
     /** Link color. */
     link: OroColor
+    /** Hovered link color. */
+    linkHover: OroColor
 
-    /** UI dark accent color. */
-    ui: {
-        /** Accenting color. */
-        accent: OroColor
-        /** Dark color currently only used for input borders. */
-        border: OroColor
-        /** Button and status bar color. */
-        button: OroColor
-        /** Button color on hover. */
-        buttonHover: OroColor
-    }
+    /** Button color. */
+    button: OroColor
+    /** Hovered button color. */
+    buttonHover: OroColor
+
+    /** Input and dropdown color. */
+    input: OroColor
+    /** Input border color. */
+    inputBorder: OroColor
+
+    /** Widget color; e.g. background of hover, notifications. */
+    widget: OroColor
+    /** Widget border color. */
+    widgetBorder: OroColor
+
+    /** Checkbox color. */
+    checkbox: OroColor
+
+    /** Scroll bar color. */
+    scrollBar: OroColor
+    /** Scroll bar color when clicked. */
+    scrollBarActive: OroColor
+
+    /** Status bar color. */
+    statusBar: OroColor
+    /** Status bar foreground color. */
+    statusBarForeground: OroColor
+    /** Status bar color during debugging. */
+    statusBarDebugging: OroColor
+    /** Status bar color when no folder is open. */
+    statusBarNoFolder: OroColor
 }
 
 /** Built theme styles and colors. */
@@ -110,14 +173,51 @@ export type BuiltTheme = {
 
     error: BuiltColor
     warning: BuiltColor
-    link: BuiltColor
+    info: BuiltColor
 
-    ui: {
-        accent: BuiltColor
-        border: BuiltColor
-        button: BuiltColor
-        buttonHover: BuiltColor
-    }
+    added: BuiltColor
+    deleted: BuiltColor
+    ignored: BuiltColor
+    modified: BuiltColor
+    untracked: BuiltColor
+
+    background: BuiltColor
+    backgroundSecondary: BuiltColor
+    backgroundPeek: BuiltColor
+
+    foreground: BuiltColor
+    foregroundInactive: BuiltColor
+
+    preformat: BuiltColor
+    accent: BuiltColor
+
+    guide: BuiltColor
+    guideFocus: BuiltColor
+
+    match: BuiltColor
+    matchBorder: BuiltColor
+
+    link: BuiltColor
+    linkHover: BuiltColor
+
+    button: BuiltColor
+    buttonHover: BuiltColor
+
+    input: BuiltColor
+    inputBorder: BuiltColor
+
+    widget: BuiltColor
+    widgetBorder: BuiltColor
+
+    checkbox: BuiltColor
+
+    scrollBar: BuiltColor
+    scrollBarActive: BuiltColor
+
+    statusBar: BuiltColor
+    statusBarForeground: BuiltColor
+    statusBarDebugging: BuiltColor
+    statusBarNoFolder: BuiltColor
 }
 
 /** Builds an Oro theme definition. */
@@ -149,13 +249,50 @@ export function buildTheme(theme: OroTheme): BuiltTheme {
 
         error: buildColor(theme.error),
         warning: buildColor(theme.warning),
-        link: buildColor(theme.link),
+        info: buildColor(theme.info),
 
-        ui: {
-            accent: buildColor(theme.ui.accent),
-            border: buildColor(theme.ui.border),
-            button: buildColor(theme.ui.button),
-            buttonHover: buildColor(theme.ui.buttonHover)
-        }
+        added: buildColor(theme.added),
+        deleted: buildColor(theme.deleted),
+        ignored: buildColor(theme.ignored),
+        modified: buildColor(theme.modified),
+        untracked: buildColor(theme.untracked),
+
+        background: buildColor(theme.background),
+        backgroundSecondary: buildColor(theme.backgroundSecondary),
+        backgroundPeek: buildColor(theme.backgroundPeek),
+
+        foreground: buildColor(theme.foreground),
+        foregroundInactive: buildColor(theme.foregroundInactive),
+
+        preformat: buildColor(theme.preformat),
+        accent: buildColor(theme.accent),
+
+        guide: buildColor(theme.guide),
+        guideFocus: buildColor(theme.guideFocus),
+
+        match: buildColor(theme.match),
+        matchBorder: buildColor(theme.matchBorder),
+
+        link: buildColor(theme.link),
+        linkHover: buildColor(theme.linkHover),
+
+        button: buildColor(theme.button),
+        buttonHover: buildColor(theme.buttonHover),
+
+        input: buildColor(theme.input),
+        inputBorder: buildColor(theme.inputBorder),
+
+        widget: buildColor(theme.widget),
+        widgetBorder: buildColor(theme.widgetBorder),
+
+        checkbox: buildColor(theme.checkbox),
+
+        scrollBar: buildColor(theme.scrollBar),
+        scrollBarActive: buildColor(theme.scrollBarActive),
+
+        statusBar: buildColor(theme.statusBar),
+        statusBarForeground: buildColor(theme.statusBarForeground),
+        statusBarDebugging: buildColor(theme.statusBarDebugging),
+        statusBarNoFolder: buildColor(theme.statusBarNoFolder)
     }
 }
