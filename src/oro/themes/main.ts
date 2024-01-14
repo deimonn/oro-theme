@@ -18,39 +18,39 @@ export function mainTheme(): OroTheme {
         name: "Oro Theme",
         filename: "mainTheme.json",
 
-        keyword: "#e0cd78",
-        operator: "#e0cd78",
+        keyword: "#E0CD78",
+        operator: "#E0CD78",
 
-        userType: "#63dbc1",
-        builtinType: "#70c2e7",
-        interfaceType: "#e4c693",
+        userType: "#63DBC1",
+        builtinType: "#70C2E7",
+        interfaceType: "#E4C693",
 
-        function: "#dddddd",
-        staticFunction: "#70c2e7",
+        function: "#DDDDDD",
+        staticFunction: "#70C2E7",
 
-        constant: "#77d4d4",
-        builtinConstant: "#77d4d4",
+        constant: "#77D4D4",
+        builtinConstant: "#77D4D4",
 
         enumeration: "#8FDB8F",
-        namespace: "#d5ccba",
-        macro: "#a0a0a0",
-        variable: "#bcd3d6",
-        number: "#cec7a8",
-        punctuation: "#a0a0a0",
+        namespace: "#D5CCBA",
+        macro: "#A0A0A0",
+        variable: "#BCD3D6",
+        number: "#CEC7A8",
+        punctuation: "#A0A0A0",
         comment: "#787878",
 
-        string: "#68e09e",
-        escape: "#a8dbbf",
+        string: "#68E09E",
+        escape: "#A8DBBF",
 
-        error: "#e04444",
-        warning: "#e0a243",
-        link: "#4eb3e2",
+        error: "#E04444",
+        warning: "#E0A243",
+        link: "#4EB3E2",
 
         ui: {
-            accent: "#70c2e7",
-            border: "#2e505f",
-            button: "#3a6375",
-            buttonHover: "#4f88a0"
+            accent: "#70C2E7",
+            border: "#2E505F",
+            button: "#3A6375",
+            buttonHover: "#4F88A0"
         }
     }
 }
