@@ -427,7 +427,7 @@ function generateTheme(theme: OroTheme): VSCodeTheme {
                 built.accent.fade(.60).hexa(),
 
             // Search.
-            "editor.findMatchBorder": built.matchBorder.hex(),
+            "editor.findMatchBorder": built.matchFocus.hex(),
             "editor.findMatchHighlightBackground": built.match.fade(.50).hexa(),
             "editorOverviewRuler.findMatchForeground": built.match.hex(),
             "minimap.findMatchHighlight": built.match.hex(),

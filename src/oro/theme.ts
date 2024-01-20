@@ -104,8 +104,8 @@ export type OroTheme = {
 
     /** Color for search matches. */
     match: OroColor
-    /** Border color for the focused match. */
-    matchBorder: OroColor
+    /** Color for the border of the currently focused search match. */
+    matchFocus: OroColor
 
     /** Link color. */
     link: OroColor
@@ -195,7 +195,7 @@ export type BuiltTheme = {
     guideFocus: BuiltColor
 
     match: BuiltColor
-    matchBorder: BuiltColor
+    matchFocus: BuiltColor
 
     link: BuiltColor
     linkHover: BuiltColor
@@ -271,7 +271,7 @@ export function buildTheme(theme: OroTheme): BuiltTheme {
         guideFocus: buildColor(theme.guideFocus),
 
         match: buildColor(theme.match),
-        matchBorder: buildColor(theme.matchBorder),
+        matchFocus: buildColor(theme.matchFocus),
 
         link: buildColor(theme.link),
         linkHover: buildColor(theme.linkHover),
