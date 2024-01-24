@@ -149,6 +149,11 @@ export type OroTheme = {
     statusBarDebugging: OroColor
     /** Status bar color when no folder is open. */
     statusBarNoFolder: OroColor
+
+    /** Badge color. */
+    badge: OroColor
+    /** Badge foreground color. */
+    badgeForeground: OroColor
 }
 
 /** Built theme styles and colors. */
@@ -226,6 +231,9 @@ export type BuiltTheme = {
     statusBarForeground: BuiltColor
     statusBarDebugging: BuiltColor
     statusBarNoFolder: BuiltColor
+
+    badge: BuiltColor
+    badgeForeground: BuiltColor
 }
 
 /** Builds an Oro theme definition. */
@@ -303,6 +311,9 @@ export function buildTheme(theme: OroTheme): BuiltTheme {
         statusBar: buildColor(theme.statusBar),
         statusBarForeground: buildColor(theme.statusBarForeground),
         statusBarDebugging: buildColor(theme.statusBarDebugging),
-        statusBarNoFolder: buildColor(theme.statusBarNoFolder)
+        statusBarNoFolder: buildColor(theme.statusBarNoFolder),
+
+        badge: buildColor(theme.badge),
+        badgeForeground: buildColor(theme.badgeForeground)
     }
 }

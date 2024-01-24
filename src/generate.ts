@@ -320,8 +320,8 @@ function generateTheme(theme: OroTheme): VSCodeTheme {
             "errorForeground": built.error.hex(),
 
             // Badge.
-            "badge.background": built.foreground.hex(),
-            "badge.foreground": built.background.hex(),
+            "badge.background": built.badge.hex(),
+            "badge.foreground": built.badgeForeground.hex(),
 
             // Modified setting.
             "settings.modifiedItemIndicator": built.modified.hex(),
@@ -446,8 +446,8 @@ function generateTheme(theme: OroTheme): VSCodeTheme {
             "activityBar.dropBorder": built.accent.hex(),
             "activityBar.inactiveForeground": built.foregroundInactive.hex(),
 
-            "activityBarBadge.background": built.foreground.hex(),
-            "activityBarBadge.foreground": built.background.hex(),
+            "activityBarBadge.background": built.badge.hex(),
+            "activityBarBadge.foreground": built.badgeForeground.hex(),
 
             // Side bar.
             "sideBar.background": built.backgroundSecondary.hex(),
