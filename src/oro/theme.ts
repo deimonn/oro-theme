@@ -80,6 +80,12 @@ export type OroTheme = {
     /** Color for untracked resources. */
     untracked: OroColor
 
+    /**
+     * Color for "running" items in the interface; currently just used for
+     * running processes on a forwarded port.
+     */
+    running: OroColor
+
     /** Main background color; e.g. the editor's. */
     background: OroColor
     /** Secondary background color; e.g. the sidebar's. */
@@ -181,6 +187,8 @@ export type BuiltTheme = {
     modified: BuiltColor
     untracked: BuiltColor
 
+    running: BuiltColor
+
     background: BuiltColor
     backgroundSecondary: BuiltColor
     backgroundPeek: BuiltColor
@@ -256,6 +264,8 @@ export function buildTheme(theme: OroTheme): BuiltTheme {
         ignored: buildColor(theme.ignored),
         modified: buildColor(theme.modified),
         untracked: buildColor(theme.untracked),
+
+        running: buildColor(theme.running),
 
         background: buildColor(theme.background),
         backgroundSecondary: buildColor(theme.backgroundSecondary),

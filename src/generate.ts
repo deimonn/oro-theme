@@ -342,6 +342,9 @@ function generateTheme(theme: OroTheme): VSCodeTheme {
             // Progress bar.
             "progressBar.background": built.accent.hex(),
 
+            // Running process on forwarded port.
+            "ports.iconRunningProcessForeground": built.running.hex(),
+
             /*─ Editor ───────────────────────────────────────────────────────*/
 
             // General.

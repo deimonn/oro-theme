@@ -52,6 +52,8 @@ export function mainTheme(): OroTheme {
         modified: "#E0CD78",
         untracked: "#63DBC1",
 
+        running: "#68E09E",
+
         background: "#161616",
         backgroundSecondary: "#1C1C1C",
         backgroundPeek: "#202020",
