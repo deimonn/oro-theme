@@ -15,6 +15,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Changed search highlighting styling; uses own unique color now and should be
   more readable
+- Changed badge styling
 
 ## [2.2.1](https://github.com/deimonn/oro-theme/compare/v2.2.0-preview...v2.2.1-preview) (Pre-release) - 2024-01-14
 
