@@ -91,6 +91,9 @@ export function mainTheme(): OroTheme {
         statusBarForeground: "#FFFFFF",
         statusBarDebugging: "#812D2A",
         statusBarNoFolder: "#98753C",
+
+        badge: "#3A6375",
+        badgeForeground: "#FFFFFF"
     }
 }
 
