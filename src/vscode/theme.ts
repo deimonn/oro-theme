@@ -48,9 +48,7 @@ export type VSCodeTheme = {
     /** Whether semantic highlighting is enabled for the theme. */
     semanticHighlighting?: boolean
     /** Semantic token style rules. */
-    semanticTokenColors?: {
-        [key: string]: VSCodeSemanticTokenColor
-    }
+    semanticTokenColors?: Record<string, VSCodeSemanticTokenColor>
 
     /** Scope-based style rules. */
     tokenColors?: VSCodeTokenColor[]
@@ -59,9 +57,7 @@ export type VSCodeTheme = {
      * General UI colors.
      *
      * These could be an object but since there's so many keys it has been left
-     * as a map for now.
+     * as a record for now.
      */
-    colors?: {
-        [key: string]: string
-    }
+    colors?: Record<string, string>
 }
