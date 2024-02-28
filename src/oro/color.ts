@@ -21,7 +21,7 @@ export type BuiltColor = Color
 
 /** Returns true if the style is an `OroColor` "instance". */
 export function isOroColor(style: OroStyle): style is OroColor {
-    return typeof style == "string" || style instanceof Color
+    return typeof style === "string" || style instanceof Color
 }
 
 /**
@@ -29,7 +29,7 @@ export function isOroColor(style: OroStyle): style is OroColor {
  * instance.
  */
 export function buildColor(color: OroColor): BuiltColor {
-    if (typeof color == "string") {
+    if (typeof color === "string") {
         return new Color(color)
     } else {
         return color
