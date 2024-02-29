@@ -17,7 +17,7 @@ jobs:
       with:
         node-version: 21.x
 
-    - name: Install package dependencies
+    - name: Install extension dependencies
       run: npm ci
 
     - name: Run ESLint previous to building

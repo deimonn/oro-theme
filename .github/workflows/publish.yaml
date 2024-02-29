@@ -17,7 +17,7 @@ jobs:
       with:
         node-version: 21.x
 
-    - name: Install package dependencies
+    - name: Install extension dependencies
       run: npm ci
 
     - name: Tag does not contain a preview label; build and publish normally
