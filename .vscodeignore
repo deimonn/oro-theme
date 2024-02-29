@@ -4,6 +4,7 @@
 .yarnrc
 src/**
 out/**
+images/**
 **/tsconfig.json
 **/.eslintrc.json
 **/*.map
