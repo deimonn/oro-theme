@@ -18,7 +18,7 @@ jobs:
         node-version: 21.x
 
     - name: Install package dependencies
-      run: npm install
+      run: npm ci
 
     - name: Tag does not contain a preview label; build and publish normally
       if: ${{ !endsWith(github.ref, '-preview') }}

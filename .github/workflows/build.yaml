@@ -18,7 +18,7 @@ jobs:
         node-version: 21.x
 
     - name: Install package dependencies
-      run: npm install
+      run: npm ci
 
     - name: Run ESLint previous to building
       run: npx eslint src --ext ts --max-warnings 0
