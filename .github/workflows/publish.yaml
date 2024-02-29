@@ -20,20 +20,23 @@ jobs:
     - name: Install extension dependencies
       run: npm ci
 
-    - name: Tag does not contain a preview label; build and publish normally
+    - name: Tag does not contain a preview label; package normally
       if: ${{ !endsWith(github.ref, '-preview') }}
-      run: npm run deploy
-      env:
-        VSCE_PAT: ${{secrets.VSCE_PAT}}
+      run: npx -p @vscode/vsce --yes -c 'vsce package'
 
-    - name: Tag contains preview label; build and publish a preview version
+    - name: Tag contains preview label; package a preview version
       if: ${{ endsWith(github.ref, '-preview') }}
-      run: npm run deployPreview
-      env:
-        VSCE_PAT: ${{secrets.VSCE_PAT}}
+      run: npx -p @vscode/vsce --yes -c 'vsce package --pre-release'
 
-    - name: Package the extension so we can release to GitHub
-      run: npx vsce package
+    - name: Publish on Visual Studio Marketplace
+      run: npx -p @vscode/vsce --yes -c 'vsce publish -i *.vsix'
+      env:
+        VSCE_PAT: ${{ secrets.VSCE_PAT }}
+
+    - name: Publish on Eclipse Open VSX
+      run: npx -p ovsx --yes -c 'ovsx publish *.vsix'
+      env:
+        OVSX_PAT: ${{ secrets.OVSX_PAT }}
 
     - name: Create release on GitHub
       uses: softprops/action-gh-release@v1
@@ -42,4 +45,4 @@ jobs:
         body: See [CHANGELOG.md](https://github.com/deimonn/oro-theme/blob/master/CHANGELOG.md) for a list of additions, changes and fixes.
         prerelease: ${{ endsWith(github.ref, '-preview') }}
       env:
-        GITHUB_TOKEN: ${{github.token}}
+        GITHUB_TOKEN: ${{ github.token }}
