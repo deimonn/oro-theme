@@ -5,6 +5,20 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.4.0](https://github.com/deimonn/oro-theme/compare/v2.3.0-preview...v2.4.0) - 2024-02-29
+
+This update officializes the additions, changes and fixes from the
+[2.2.0](#220-pre-release---2024-01-14), [2.2.1](#221-pre-release---2024-01-14)
+and [2.3.0](#230-pre-release---2024-01-24) pre-releases.
+
+It also marks the beginning of this extension's releases on
+[open-vsx.org](https://open-vsx.org/extension/deimonn/oro-theme).
+
+### Changed
+
+- Updated the extension description to be fancier and show off more of the
+  theme's features
+
 ## [2.3.0](https://github.com/deimonn/oro-theme/compare/v2.2.1-preview...v2.3.0-preview) (Pre-release) - 2024-01-24
 
 ### Added
