@@ -45,8 +45,8 @@
         ]
     },
     "scripts": {
-        "vscode:prepublish": "npm run compile",
-        "compile": "ts-node src/generate.ts",
+        "vscode:prepublish": "npm run generate",
+        "generate": "ts-node src/generate.ts",
         "lint": "eslint src --ext ts"
     },
     "devDependencies": {
