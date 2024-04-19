@@ -5,6 +5,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.4.1](https://github.com/deimonn/oro-theme/compare/v2.4.0...v2.4.1) - 2024-04-19
+
+### Fixed
+
+- Fixed the color of an inactive selection in a tree or list (such as in the
+  file explorer) being so dark it was barely visible
+
 ## [2.4.0](https://github.com/deimonn/oro-theme/compare/v2.3.0-preview...v2.4.0) - 2024-02-29
 
 This update officializes the additions, changes and fixes from the
