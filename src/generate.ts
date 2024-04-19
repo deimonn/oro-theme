@@ -494,7 +494,7 @@ function generateTheme(theme: OroTheme): VSCodeTheme {
             "list.focusBackground": built.accent.fade(.75).hexa(),
             "list.hoverBackground": built.accent.fade(.90).hexa(),
             "list.highlightForeground": built.accent.hex(),
-            "list.inactiveSelectionBackground": built.widget.hex(),
+            "list.inactiveSelectionBackground": built.accent.fade(.80).hexa(),
 
             // Menus.
             "menu.background": built.widget.hex(),
