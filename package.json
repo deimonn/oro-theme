@@ -22,7 +22,8 @@
         "cpp",
         "c++",
         "csharp",
-        "c#"
+        "c#",
+        "python"
     ],
     "engines": {
         "vscode": "^1.63.0"
