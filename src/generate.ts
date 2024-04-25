@@ -186,7 +186,10 @@ function generateTheme(theme: OroTheme): VSCodeTheme {
             },
             // Namespace.
             {
-                scope: "entity.name.type.namespace",
+                scope: [
+                    "entity.name.type.namespace",
+                    "entity.name.namespace"
+                ],
                 settings: built.namespace.tokenColorSettings
             },
             // Keywords, modifiers and operators.
