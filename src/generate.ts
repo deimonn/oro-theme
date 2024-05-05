@@ -29,9 +29,7 @@ for (const theme of [mainTheme(), mainThemeItalics()]) {
     )
 }
 
-/*────────────────────────────────────────────────────────────────────────────*
-  Generator
- *────────────────────────────────────────────────────────────────────────────*/
+/*─ Generator ────────────────────────────────────────────────────────────────*/
 
 /** Generates a VSCode theme from an Oro theme definition object. */
 function generateTheme(theme: OroTheme): VSCodeTheme {
