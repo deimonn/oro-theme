@@ -1,9 +1,6 @@
 /*─ vscode/theme.ts ──────────────────────────────────────────────────────────*
   Visual Studio Code theme type declarations. These allow for defining a theme
   in TypeScript in an almost completely type-safe manner.
-
-  They were deduced by poking around in a JSON file with the
-  `vscode://schemas/color-theme` schema.
  *────────────────────────────────────────────────────────────────────────────*
   Copyright (c) 2024 Deimonn (a.k.a. Nahuel S. Cisterna)
 
