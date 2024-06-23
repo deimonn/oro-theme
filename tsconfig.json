@@ -1,9 +1,9 @@
 {
-	"compilerOptions": {
-		"lib": ["ES2020"],
-		"rootDir": "src",
-		"strict": true,
-		"noImplicitReturns": true,
-		"noFallthroughCasesInSwitch": true,
-	}
+    "compilerOptions": {
+        "lib": ["ES2020"],
+        "rootDir": "src",
+        "strict": true,
+        "noImplicitReturns": true,
+        "noFallthroughCasesInSwitch": true,
+    }
 }
