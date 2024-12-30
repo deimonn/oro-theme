@@ -26,7 +26,7 @@ export function mainTheme(): OroTheme {
         interfaceType: "#E4C693",
 
         function: "#DDDDDD",
-        staticFunction: "#70C2E7",
+        staticFunction: "#DDDDDD",
 
         constant: "#77D4D4",
         builtinConstant: "#77D4D4",
