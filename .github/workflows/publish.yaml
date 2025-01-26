@@ -15,7 +15,7 @@ jobs:
     - name: Install Node.js
       uses: actions/setup-node@v3
       with:
-        node-version: 21.x
+        node-version: latest
 
     - name: Install extension dependencies
       run: npm ci
