@@ -22,19 +22,19 @@ jobs:
 
     - name: Tag does not contain a preview label; package normally
       if: ${{ !endsWith(github.ref, '-preview') }}
-      run: npx -p @vscode/vsce --yes -c 'vsce package'
+      run: npx vsce package
 
     - name: Tag contains preview label; package a preview version
       if: ${{ endsWith(github.ref, '-preview') }}
-      run: npx -p @vscode/vsce --yes -c 'vsce package --pre-release'
+      run: npx vsce package --pre-release
 
     - name: Publish on Visual Studio Marketplace
-      run: npx -p @vscode/vsce --yes -c 'vsce publish -i *.vsix'
+      run: npx vsce publish -i *.vsix
       env:
         VSCE_PAT: ${{ secrets.VSCE_PAT }}
 
     - name: Publish on Eclipse Open VSX
-      run: npx -p ovsx --yes -c 'ovsx publish *.vsix'
+      run: npx ovsx publish *.vsix
       env:
         OVSX_PAT: ${{ secrets.OVSX_PAT }}
 
