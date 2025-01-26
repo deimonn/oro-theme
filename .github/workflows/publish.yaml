@@ -42,5 +42,4 @@ jobs:
       uses: softprops/action-gh-release@v1
       with:
         files: '*.vsix'
-        body: See [CHANGELOG.md](https://github.com/deimonn/oro-theme/blob/master/CHANGELOG.md) for a list of additions, changes and fixes.
         prerelease: ${{ endsWith(github.ref, '-preview') }}
