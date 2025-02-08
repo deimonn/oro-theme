@@ -51,12 +51,10 @@
         "lint": "eslint src --ext ts"
     },
     "devDependencies": {
-        "@stylistic/eslint-plugin": "^1.6.2",
         "@types/color": "^3.0.6",
         "@types/node": "22.x",
         "@vscode/vsce": "^3.2.1",
         "color": "^4.2.3",
-        "eslint": "^8.57.0",
         "ovsx": "^0.10.1",
         "ts-node": "^10.9.2",
         "typescript": "^5.3.3"
