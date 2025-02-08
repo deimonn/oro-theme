@@ -26,7 +26,7 @@
         "python"
     ],
     "engines": {
-        "vscode": "^1.63.0"
+        "vscode": "^1.78.0"
     },
     "categories": [
         "Themes"
@@ -53,9 +53,7 @@
     "devDependencies": {
         "@stylistic/eslint-plugin": "^1.6.2",
         "@types/color": "^3.0.6",
-        "@types/node": "20.x",
-        "@typescript-eslint/eslint-plugin": "^7.1.0",
-        "@typescript-eslint/parser": "^7.1.0",
+        "@types/node": "22.x",
         "@vscode/vsce": "^3.2.1",
         "color": "^4.2.3",
         "eslint": "^8.57.0",
