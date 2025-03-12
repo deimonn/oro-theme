@@ -38,6 +38,9 @@ for (const theme of [mainTheme(), mainThemeItalics()]) {
 function generateTheme(theme: OroTheme): VSCodeTheme {
     const built = buildTheme(theme);
     return {
+        /*─────────────────*
+         │ Semantic tokens
+         */
         semanticHighlighting: true,
         semanticTokenColors: {
             /*───────*
@@ -149,6 +152,10 @@ function generateTheme(theme: OroTheme): VSCodeTheme {
             "*.usedAsMutableReference": { fontStyle: "underline" },
             "*.usedAsMutablePointer":   { fontStyle: "underline" }
         },
+
+        /*────────────────*
+         │ TextMate rules
+         */
         tokenColors: [
             // Invalid.
             {
@@ -328,6 +335,10 @@ function generateTheme(theme: OroTheme): VSCodeTheme {
                 settings: built.punctuation.tokenColorSettings
             }
         ],
+
+        /*───────*
+         │ Other
+         */
         colors: {
             /*──────*
              │ Misc
