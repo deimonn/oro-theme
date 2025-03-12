@@ -1,14 +1,14 @@
-/*─ vscode/theme.ts ──────────────────────────────────────────────────────────*
-  Visual Studio Code theme type declarations. These allow for defining a theme
-  in TypeScript in an almost completely type-safe manner.
- *────────────────────────────────────────────────────────────────────────────*
-  Copyright (c) 2024 Deimonn (a.k.a. Nahuel S. Cisterna)
+/*── vscode/theme.ts ── Visual Studio Code theme type declarations ──*
+ │
+ │ Copyright (c) 2024-2025 Deimonn (a.k.a. Nahuel S. Cisterna)
+ │
+ │ This file is licensed under the MIT License.
+ │
+ │ See https://raw.githubusercontent.com/deimonn/oro-theme/master/LICENSE for license information.
+ │
+ */
 
-  This file is licensed under the MIT License.
-
-  See https://raw.githubusercontent.com/deimonn/oro-theme/master/LICENSE for
-  license information.
- *────────────────────────────────────────────────────────────────────────────*/
+// SPDX-License-Identifier: MIT
 
 /** Style rules based on semantic highlighting. */
 export type VSCodeSemanticTokenColor = string | {
@@ -18,7 +18,7 @@ export type VSCodeSemanticTokenColor = string | {
     strikethrough?: boolean
     underline?: boolean
     fontStyle?: string
-}
+};
 
 /** Style rules based on matched TextMate scopes. */
 export type VSCodeTokenColor = string | {
@@ -28,14 +28,14 @@ export type VSCodeTokenColor = string | {
     scope: string | string[]
     /** Rule style settings. */
     settings: VSCodeTokenColorSettings
-}
+};
 
 /** Style settings for token color. */
 export type VSCodeTokenColorSettings = {
     fontStyle?: string
     foreground?: string
     background?: string
-}
+};
 
 /**
  * Represents a complete Visual Studio Code theme. Writing this to a JSON file
@@ -57,4 +57,4 @@ export type VSCodeTheme = {
      * as a record for now.
      */
     colors?: Record<string, string>
-}
+};

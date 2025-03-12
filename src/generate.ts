@@ -1,24 +1,25 @@
-/*─ generate.ts ──────────────────────────────────────────────────────────────*
-  Generates the actual theme JSON files for distribution.
- *────────────────────────────────────────────────────────────────────────────*
-  Copyright (c) 2023-2024 Deimonn (a.k.a. Nahuel S. Cisterna)
+/*── generate.ts ── Generates the actual theme JSON files for distribution ──*
+ │
+ │ Copyright (c) 2023-2025 Deimonn (a.k.a. Nahuel S. Cisterna)
+ │
+ │ This file is licensed under the MIT License.
+ │
+ │ See https://raw.githubusercontent.com/deimonn/oro-theme/master/LICENSE for license information.
+ │
+ */
 
-  This file is licensed under the MIT License.
+// SPDX-License-Identifier: MIT
 
-  See https://raw.githubusercontent.com/deimonn/oro-theme/master/LICENSE for
-  license information.
- *────────────────────────────────────────────────────────────────────────────*/
+import { OroTheme, buildTheme } from "./oro/theme";
+import { VSCodeTheme } from "./vscode/theme";
 
-import { OroTheme, buildTheme } from "./oro/theme"
-import { VSCodeTheme } from "./vscode/theme"
+import { mainTheme, mainThemeItalics } from "./oro/themes/main";
 
-import { mainTheme, mainThemeItalics } from "./oro/themes/main"
-
-import * as fs from "fs"
+import * as fs from "fs";
 
 // Create `dist` directory.
 if (!fs.existsSync("dist")) {
-    fs.mkdirSync("dist")
+    fs.mkdirSync("dist");
 }
 
 // Generate theme JSON files.
@@ -26,18 +27,22 @@ for (const theme of [mainTheme(), mainThemeItalics()]) {
     fs.writeFileSync(
         `dist/${theme.filename}`,
         JSON.stringify(generateTheme(theme))
-    )
+    );
 }
 
-/*─ Generator ────────────────────────────────────────────────────────────────*/
+/*───────────*
+ │ Generator
+ */
 
 /** Generates a VSCode theme from an Oro theme definition object. */
 function generateTheme(theme: OroTheme): VSCodeTheme {
-    const built = buildTheme(theme)
+    const built = buildTheme(theme);
     return {
         semanticHighlighting: true,
         semanticTokenColors: {
-            /*─ Types ────────────────────────────────────────────────────────*/
+            /*───────*
+             │ Types
+             */
 
             // User-defined types.
             class: built.userType.semanticTokenColor,
@@ -57,7 +62,9 @@ function generateTheme(theme: OroTheme): VSCodeTheme {
             // Derives in rust-analyzer.
             derive: built.interfaceType.semanticTokenColor,
 
-            /*─ Keywords ─────────────────────────────────────────────────────*/
+            /*──────────*
+             │ Keywords
+             */
 
             // Keywords, modifiers and operations.
             keyword: built.keyword.semanticTokenColor,
@@ -70,7 +77,9 @@ function generateTheme(theme: OroTheme): VSCodeTheme {
             // Lifetimes in rust-analyzer.
             lifetime: built.keyword.semanticTokenColor,
 
-            /*─ Function-like ────────────────────────────────────────────────*/
+            /*───────────────*
+             │ Function-like
+             */
 
             // Function-like.
             function: built.function.semanticTokenColor,
@@ -85,7 +94,9 @@ function generateTheme(theme: OroTheme): VSCodeTheme {
             // Macros.
             macro: built.macro.semanticTokenColor,
 
-            /*─ Variables & constants ────────────────────────────────────────*/
+            /*───────────────────────*
+             │ Variables & constants
+             */
 
             // Variable-like.
             parameter: built.variable.semanticTokenColor,
@@ -108,7 +119,9 @@ function generateTheme(theme: OroTheme): VSCodeTheme {
             // Built-in constants in Pylance.
             builtinConstant: built.builtinConstant.semanticTokenColor,
 
-            /*─ Miscellaneous ────────────────────────────────────────────────*/
+            /*───────────────*
+             │ Miscellaneous
+             */
 
             // Namespaces.
             namespace: built.namespace.semanticTokenColor,
@@ -120,7 +133,9 @@ function generateTheme(theme: OroTheme): VSCodeTheme {
             punctuation: built.punctuation.semanticTokenColor,
             formatSpecifier: built.punctuation.semanticTokenColor,
 
-            /*─ Modifiers ────────────────────────────────────────────────────*/
+            /*───────────*
+             │ Modifiers
+             */
 
             // Semantic modifiers.
             "*.deprecated":   { fontStyle: "strikethrough" },
@@ -314,7 +329,9 @@ function generateTheme(theme: OroTheme): VSCodeTheme {
             }
         ],
         colors: {
-            /*─ Misc ─────────────────────────────────────────────────────────*/
+            /*──────*
+             │ Misc
+             */
 
             // Foregrounds.
             "foreground": built.foreground.hex(),
@@ -346,7 +363,9 @@ function generateTheme(theme: OroTheme): VSCodeTheme {
             // Running process on forwarded port.
             "ports.iconRunningProcessForeground": built.running.hex(),
 
-            /*─ Editor ───────────────────────────────────────────────────────*/
+            /*────────*
+             │ Editor
+             */
 
             // General.
             "editor.background": built.background.hex(),
@@ -373,13 +392,10 @@ function generateTheme(theme: OroTheme): VSCodeTheme {
             "editorBracketMatch.background": "#00000000",
             "editorBracketMatch.border": built.punctuation.color.hex(),
 
-            "editorOverviewRuler.bracketMatchForeground":
-                built.punctuation.color.hex(),
+            "editorOverviewRuler.bracketMatchForeground": built.punctuation.color.hex(),
 
-            "editorIndentGuide.activeBackground":
-                built.guideFocus.darken(.50).hex(),
-            "editorIndentGuide.background":
-                built.guide.darken(.50).hex(),
+            "editorIndentGuide.activeBackground": built.guideFocus.darken(.50).hex(),
+            "editorIndentGuide.background": built.guide.darken(.50).hex(),
 
             // Tabs.
             "tab.activeBackground": built.background.hex(),
@@ -390,10 +406,8 @@ function generateTheme(theme: OroTheme): VSCodeTheme {
             "tab.hoverBackground": built.backgroundSecondary.lighten(.25).hex(),
             "tab.lastPinnedBorder": built.guide.hex(),
 
-            "editorGroupHeader.noTabsBackground":
-                built.backgroundSecondary.hex(),
-            "editorGroupHeader.tabsBackground":
-                built.backgroundSecondary.hex(),
+            "editorGroupHeader.noTabsBackground": built.backgroundSecondary.hex(),
+            "editorGroupHeader.tabsBackground": built.backgroundSecondary.hex(),
 
             "editorGroup.border": built.guide.hex(),
 
@@ -402,10 +416,8 @@ function generateTheme(theme: OroTheme): VSCodeTheme {
             "peekViewEditor.background": built.backgroundPeek.hex(),
             "peekViewEditorGutter.background": built.backgroundPeek.hex(),
 
-            "peekViewEditor.matchHighlightBackground":
-                built.accent.fade(.62).hexa(),
-            "peekViewResult.matchHighlightBackground":
-                built.accent.fade(.62).hexa(),
+            "peekViewEditor.matchHighlightBackground": built.accent.fade(.62).hexa(),
+            "peekViewResult.matchHighlightBackground": built.accent.fade(.62).hexa(),
 
             "peekViewResult.background": built.backgroundSecondary.hex(),
             "peekViewTitle.background": built.accent.darken(.75).hex(),
@@ -425,10 +437,8 @@ function generateTheme(theme: OroTheme): VSCodeTheme {
             "editor.selectionBackground": built.accent.fade(.80).hexa(),
             "editor.selectionHighlightBorder": built.accent.fade(.60).hexa(),
 
-            "minimap.selectionHighlight":
-                built.accent.fade(.60).hexa(),
-            "editorOverviewRuler.selectionHighlightForeground":
-                built.accent.fade(.60).hexa(),
+            "minimap.selectionHighlight": built.accent.fade(.60).hexa(),
+            "editorOverviewRuler.selectionHighlightForeground": built.accent.fade(.60).hexa(),
 
             // Search.
             "editor.findMatchBorder": built.matchFocus.hex(),
@@ -436,7 +446,9 @@ function generateTheme(theme: OroTheme): VSCodeTheme {
             "editorOverviewRuler.findMatchForeground": built.match.hex(),
             "minimap.findMatchHighlight": built.match.hex(),
 
-            /*─ Interface ────────────────────────────────────────────────────*/
+            /*───────────*
+             │ Interface
+             */
 
             // Activity bar.
             "activityBar.activeBackground": built.backgroundSecondary.hex(),
@@ -463,10 +475,8 @@ function generateTheme(theme: OroTheme): VSCodeTheme {
             "statusBarItem.remoteBackground": built.foreground.hex(),
             "statusBarItem.remoteForeground": built.background.hex(),
 
-            "statusBarItem.remoteHoverBackground":
-                built.foreground.darken(.50).hex(),
-            "statusBarItem.remoteHoverForeground":
-                built.foreground.hex(),
+            "statusBarItem.remoteHoverBackground": built.foreground.darken(.50).hex(),
+            "statusBarItem.remoteHoverForeground": built.foreground.hex(),
 
             "statusBar.focusBorder": built.statusBarForeground.hex(),
 
@@ -507,7 +517,9 @@ function generateTheme(theme: OroTheme): VSCodeTheme {
             // All borders.
             "focusBorder": built.accent.hex(),
 
-            /*─ Controls ─────────────────────────────────────────────────────*/
+            /*──────────*
+             │ Controls
+             */
 
             // Button.
             "button.background": built.button.hex(),
@@ -525,7 +537,9 @@ function generateTheme(theme: OroTheme): VSCodeTheme {
             "dropdown.background": built.input.hex(),
             "dropdown.border": built.inputBorder.hex(),
 
-            /*─ Text ─────────────────────────────────────────────────────────*/
+            /*──────*
+             │ Text
+             */
 
             // Link.
             "textLink.activeForeground": built.linkHover.hex(),
@@ -540,23 +554,18 @@ function generateTheme(theme: OroTheme): VSCodeTheme {
             // Selection.
             "selection.background": built.accent.fade(.80).hexa(),
 
-            /*─ Resources ────────────────────────────────────────────────────*/
+            /*───────────*
+             │ Resources
+             */
 
             // Git decorations.
-            "gitDecoration.addedResourceForeground":
-                built.added.hex(),
-            "gitDecoration.deletedResourceForeground":
-                built.deleted.hex(),
-            "gitDecoration.stageDeletedResourceForeground":
-                built.deleted.hex(),
-            "gitDecoration.ignoredResourceForeground":
-                built.ignored.hex(),
-            "gitDecoration.modifiedResourceForeground":
-                built.modified.hex(),
-            "gitDecoration.stageModifiedResourceForeground":
-                built.modified.hex(),
-            "gitDecoration.untrackedResourceForeground":
-                built.untracked.hex(),
+            "gitDecoration.addedResourceForeground": built.added.hex(),
+            "gitDecoration.deletedResourceForeground": built.deleted.hex(),
+            "gitDecoration.stageDeletedResourceForeground": built.deleted.hex(),
+            "gitDecoration.ignoredResourceForeground": built.ignored.hex(),
+            "gitDecoration.modifiedResourceForeground": built.modified.hex(),
+            "gitDecoration.stageModifiedResourceForeground": built.modified.hex(),
+            "gitDecoration.untrackedResourceForeground": built.untracked.hex(),
 
             // Minimap.
             "minimapGutter.addedBackground": built.added.hex(),
@@ -569,14 +578,13 @@ function generateTheme(theme: OroTheme): VSCodeTheme {
             "editorGutter.deletedBackground": built.deleted.hex(),
 
             // Overview ruler.
-            "editorOverviewRuler.addedForeground":
-                built.added.fade(.50).hexa(),
-            "editorOverviewRuler.modifiedForeground":
-                built.modified.fade(.50).hexa(),
-            "editorOverviewRuler.deletedForeground":
-                built.deleted.fade(.50).hexa(),
+            "editorOverviewRuler.addedForeground": built.added.fade(.50).hexa(),
+            "editorOverviewRuler.modifiedForeground": built.modified.fade(.50).hexa(),
+            "editorOverviewRuler.deletedForeground": built.deleted.fade(.50).hexa(),
 
-            /*─ Diagnostics ──────────────────────────────────────────────────*/
+            /*─────────────*
+             │ Diagnostics
+             */
 
             // In editor.
             "editorError.background": built.error.fade(.50).hexa(),
@@ -622,26 +630,21 @@ function generateTheme(theme: OroTheme): VSCodeTheme {
             "editorOverviewRuler.infoForeground": built.info.hex(),
 
             // Input validation in settings.
-            "inputValidation.errorBackground":
-                built.error.darken(.75).hex(),
-            "inputValidation.errorBorder":
-                built.error.hex(),
-            "inputValidation.errorForeground":
-                built.error.lighten(.25).hex(),
+            "inputValidation.errorBackground": built.error.darken(.75).hex(),
+            "inputValidation.errorBorder": built.error.hex(),
+            "inputValidation.errorForeground": built.error.lighten(.25).hex(),
 
-            "inputValidation.warningBackground":
-                built.warning.darken(.75).hex(),
-            "inputValidation.warningBorder":
-                built.warning.hex(),
-            "inputValidation.warningForeground":
-                built.warning.lighten(.25).hex(),
+            "inputValidation.warningBackground": built.warning.darken(.75).hex(),
+            "inputValidation.warningBorder": built.warning.hex(),
+            "inputValidation.warningForeground": built.warning.lighten(.25).hex(),
 
             "inputValidation.infoBackground": built.info.darken(.75).hex(),
             "inputValidation.infoBorder": built.info.hex(),
             "inputValidation.infoForeground": built.info.lighten(.25).hex(),
 
-            /*─ ErrorLens ────────────────────────────────────────────────────*/
-            /* Special interaction with the ErrorLens extension.              */
+            /*───────────*
+             │ ErrorLens
+             */
 
             // Error colors.
             "errorLens.errorForeground": built.error.hex(),
@@ -650,14 +653,10 @@ function generateTheme(theme: OroTheme): VSCodeTheme {
             "errorLens.errorRangeBackground": "#00000000",
 
             // Warning colors.
-            "errorLens.warningForeground":
-                built.warning.hex(),
-            "errorLens.warningBackground":
-                built.warning.fade(.90).hexa(),
-            "errorLens.warningMessageBackground":
-                built.warning.fade(.90).hexa(),
-            "errorLens.warningRangeBackground":
-                "#00000000",
+            "errorLens.warningForeground": built.warning.hex(),
+            "errorLens.warningBackground": built.warning.fade(.90).hexa(),
+            "errorLens.warningMessageBackground": built.warning.fade(.90).hexa(),
+            "errorLens.warningRangeBackground": "#00000000",
 
             // Info colors.
             "errorLens.infoForeground": built.info.hex(),
@@ -671,5 +670,5 @@ function generateTheme(theme: OroTheme): VSCodeTheme {
             "errorLens.hintMessageBackground": built.ignored.fade(.90).hexa(),
             "errorLens.hintRangeBackground": "#00000000",
         }
-    }
+    };
 }

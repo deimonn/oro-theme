@@ -1,16 +1,17 @@
-/*─ oro/theme/main.ts ────────────────────────────────────────────────────────*
-  Defines the main, original Oro Theme, as well as its italics variant.
- *────────────────────────────────────────────────────────────────────────────*
-  Copyright (c) 2023-2024 Deimonn (a.k.a. Nahuel S. Cisterna)
+/*── oro/theme/main.ts ── Main, original Oro Theme and its italics variant ──*
+ │
+ │ Copyright (c) 2023-2025 Deimonn (a.k.a. Nahuel S. Cisterna)
+ │
+ │ This file is licensed under the MIT License.
+ │
+ │ See https://raw.githubusercontent.com/deimonn/oro-theme/master/LICENSE for license information.
+ │
+ */
 
-  This file is licensed under the MIT License.
+// SPDX-License-Identifier: MIT
 
-  See https://raw.githubusercontent.com/deimonn/oro-theme/master/LICENSE for
-  license information.
- *────────────────────────────────────────────────────────────────────────────*/
-
-import { OroColor } from "../color"
-import { OroTheme } from "../theme"
+import { OroColor } from "../color";
+import { OroTheme } from "../theme";
 
 /** Main theme definition. */
 export function mainTheme(): OroTheme {
@@ -94,30 +95,30 @@ export function mainTheme(): OroTheme {
 
         badge: "#3A6375",
         badgeForeground: "#FFFFFF"
-    }
+    };
 }
 
 /** Definition of the italics variant of the main theme. */
 export function mainThemeItalics(): OroTheme {
-    const theme = mainTheme()
+    const theme = mainTheme();
 
-    theme.name = "Oro Theme (Italics)"
-    theme.filename = "mainThemeItalics.json"
+    theme.name = "Oro Theme (Italics)";
+    theme.filename = "mainThemeItalics.json";
 
     theme.keyword = {
         foreground: theme.keyword as OroColor,
         italic: true
-    }
+    };
 
     theme.builtinType = {
         foreground: theme.builtinType as OroColor,
         italic: true
-    }
+    };
 
     theme.builtinConstant = {
         foreground: theme.builtinConstant as OroColor,
         italic: true
-    }
+    };
 
-    return theme
+    return theme;
 }

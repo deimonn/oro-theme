@@ -1,17 +1,17 @@
-/*─ oro/theme.ts ─────────────────────────────────────────────────────────────*
-  Defines the `OroTheme` object, which is used to define all variants in the
-  extension.
- *────────────────────────────────────────────────────────────────────────────*
-  Copyright (c) 2023-2024 Deimonn (a.k.a. Nahuel S. Cisterna)
+/*── oro/theme.ts ── Theme object used to define all variants in the extension ──*
+ │
+ │ Copyright (c) 2023-2025 Deimonn (a.k.a. Nahuel S. Cisterna)
+ │
+ │ This file is licensed under the MIT License.
+ │
+ │ See https://raw.githubusercontent.com/deimonn/oro-theme/master/LICENSE for license information.
+ │
+ */
 
-  This file is licensed under the MIT License.
+// SPDX-License-Identifier: MIT
 
-  See https://raw.githubusercontent.com/deimonn/oro-theme/master/LICENSE for
-  license information.
- *────────────────────────────────────────────────────────────────────────────*/
-
-import { OroColor, BuiltColor, buildColor } from "./color"
-import { OroStyle, BuiltStyle, buildStyle } from "./style"
+import { OroColor, BuiltColor, buildColor } from "./color";
+import { OroStyle, BuiltStyle, buildStyle } from "./style";
 
 /** Oro theme definition object. */
 export type OroTheme = {
@@ -81,8 +81,8 @@ export type OroTheme = {
     untracked: OroColor
 
     /**
-     * Color for "running" items in the interface; currently just used for
-     * running processes on a forwarded port.
+     * Color for "running" items in the interface; currently just used for running processes on a
+     * forwarded port.
      */
     running: OroColor
 
@@ -154,7 +154,7 @@ export type OroTheme = {
     badge: OroColor
     /** Badge foreground color. */
     badgeForeground: OroColor
-}
+};
 
 /** Built theme styles and colors. */
 export type BuiltTheme = {
@@ -234,7 +234,7 @@ export type BuiltTheme = {
 
     badge: BuiltColor
     badgeForeground: BuiltColor
-}
+};
 
 /** Builds an Oro theme definition. */
 export function buildTheme(theme: OroTheme): BuiltTheme {
@@ -315,5 +315,5 @@ export function buildTheme(theme: OroTheme): BuiltTheme {
 
         badge: buildColor(theme.badge),
         badgeForeground: buildColor(theme.badgeForeground)
-    }
+    };
 }

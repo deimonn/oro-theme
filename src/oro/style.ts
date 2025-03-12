@@ -1,20 +1,17 @@
-/*─ oro/style.ts ─────────────────────────────────────────────────────────────*
-  Defines the `OroStyle` object, capable of describing any style in the
-  extension.
- *────────────────────────────────────────────────────────────────────────────*
-  Copyright (c) 2023-2024 Deimonn (a.k.a. Nahuel S. Cisterna)
+/*── oro/style.ts ── Style object capable of describing any style in the extension ──*
+ │
+ │ Copyright (c) 2023-2025 Deimonn (a.k.a. Nahuel S. Cisterna)
+ │
+ │ This file is licensed under the MIT License.
+ │
+ │ See https://raw.githubusercontent.com/deimonn/oro-theme/master/LICENSE for license information.
+ │
+ */
 
-  This file is licensed under the MIT License.
+// SPDX-License-Identifier: MIT
 
-  See https://raw.githubusercontent.com/deimonn/oro-theme/master/LICENSE for
-  license information.
- *────────────────────────────────────────────────────────────────────────────*/
-
-import { OroColor, BuiltColor, isOroColor, buildColor } from "./color"
-import {
-    VSCodeSemanticTokenColor,
-    VSCodeTokenColorSettings
-} from "../vscode/theme"
+import { OroColor, BuiltColor, isOroColor, buildColor } from "./color";
+import { VSCodeSemanticTokenColor, VSCodeTokenColorSettings } from "../vscode/theme";
 
 /** Oro style. Describes how to style a token. Build with `buildStyle`. */
 export type OroStyle = OroColor | {
@@ -28,20 +25,20 @@ export type OroStyle = OroColor | {
     strikethrough?: boolean
     /** Render with underline. */
     underline?: boolean
-}
+};
 
 /** Built oro style. */
 export type BuiltStyle = {
     semanticTokenColor: VSCodeSemanticTokenColor
     tokenColorSettings: VSCodeTokenColorSettings
     color: BuiltColor
-}
+};
 
 /** Builds an Oro style. */
 export function buildStyle(style: OroStyle): BuiltStyle {
     // Style is just a color.
     if (isOroColor(style)) {
-        const color = buildColor(style)
+        const color = buildColor(style);
         return {
             semanticTokenColor: color.hexa(),
             tokenColorSettings: {
@@ -49,23 +46,23 @@ export function buildStyle(style: OroStyle): BuiltStyle {
                 fontStyle: ""
             },
             color
-        }
+        };
     }
 
     // Style makes use of font styles.
-    const color = buildColor(style.foreground)
-    let fontStyle: string | string[] = []
+    const color = buildColor(style.foreground);
+    let fontStyle: string | string[] = [];
 
-    if (style.bold) { fontStyle.push("bold") }
-    if (style.italic) { fontStyle.push("italic") }
-    if (style.strikethrough) { fontStyle.push("strikethrough") }
-    if (style.underline) { fontStyle.push("underline") }
+    if (style.bold) { fontStyle.push("bold"); }
+    if (style.italic) { fontStyle.push("italic"); }
+    if (style.strikethrough) { fontStyle.push("strikethrough"); }
+    if (style.underline) { fontStyle.push("underline"); }
 
-    fontStyle = fontStyle.join(" ")
+    fontStyle = fontStyle.join(" ");
 
     return {
         semanticTokenColor: { foreground: color.hexa(), fontStyle },
         tokenColorSettings: { foreground: color.hexa(), fontStyle },
         color
-    }
+    };
 }
