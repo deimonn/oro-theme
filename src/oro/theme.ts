@@ -22,6 +22,8 @@ type BaseTheme<S, C> = {
 
     /** Style for user-defined types, such as classes. */
     userType: S
+    /** Style for primitive type definitions part of a standard library. */
+    standardType: S
     /** Style for built-in types. */
     builtinType: S
     /** Style for interface or interface-like types. */
@@ -169,6 +171,7 @@ export function buildTheme(theme: OroTheme): BuiltTheme {
         operator: buildStyle(theme.operator),
 
         userType: buildStyle(theme.userType),
+        standardType: buildStyle(theme.standardType),
         builtinType: buildStyle(theme.builtinType),
         interfaceType: buildStyle(theme.interfaceType),
 

@@ -23,6 +23,7 @@ export function mainTheme(): OroTheme {
         operator: "#E0CD78",
 
         userType: "#63DBC1",
+        standardType: "#70DBE5",
         builtinType: "#70C2E7",
         interfaceType: "#E4C693",
 
@@ -107,6 +108,11 @@ export function mainThemeItalics(): OroTheme {
 
     theme.keyword = {
         foreground: theme.keyword as OroColor,
+        italic: true
+    };
+
+    theme.standardType = {
+        foreground: theme.standardType as OroColor,
         italic: true
     };
 

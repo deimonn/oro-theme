@@ -60,6 +60,9 @@ function generateTheme(theme: OroTheme): VSCodeTheme {
             enum: built.enumeration.semanticTokenColor,
             enumMember: built.constant.semanticTokenColor,
 
+            // Standard library types.
+            "type.defaultLibrary": built.standardType.semanticTokenColor,
+
             // Built-in types in rust-analyzer.
             builtinType: built.builtinType.semanticTokenColor,
             // Derives in rust-analyzer.
