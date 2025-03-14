@@ -62,6 +62,11 @@ function generateTheme(theme: OroTheme): VSCodeTheme {
 
             // Standard library types.
             "type.defaultLibrary": built.standardType.semanticTokenColor,
+            // Exception for aliases in rust-analyzer.
+            "typeAlias.defaultLibrary": {
+                foreground: built.userType.color.hex(),
+                fontStyle: ""
+            },
 
             // Built-in types in rust-analyzer.
             builtinType: built.builtinType.semanticTokenColor,
