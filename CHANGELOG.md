@@ -4,6 +4,18 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.7.0](https://github.com/deimonn/oro-theme/compare/v2.6.0...v2.7.0-preview) - 2025-03-14
+
+### Added
+
+- Introduced 'Original' variant of the Oro Theme, replicating it as it was before v2.6.0.
+
+### Changed
+
+- Main theme changes
+  - Primitive types provided by the standard library (like `int32_t` in C/C++) now get their own distinct style
+  - Macros now take after keywords rather than punctuation
+
 ## [2.6.0](https://github.com/deimonn/oro-theme/compare/v2.5.0...v2.6.0) - 2024-12-30
 
 ### Removed
