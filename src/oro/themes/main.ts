@@ -35,7 +35,7 @@ export function mainTheme(): OroTheme {
 
         enumeration: "#8FDB8F",
         namespace: "#D5CCBA",
-        macro: "#A0A0A0",
+        macro: "#E0CD78",
         variable: "#BCD3D6",
         number: "#CEC7A8",
         punctuation: "#A0A0A0",
