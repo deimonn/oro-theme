@@ -1,4 +1,4 @@
-/*── oro/theme/main.ts ── Main, original Oro Theme and its italics variant ──*
+/*── oro/theme/main.ts ── Main Oro Theme and its italics variant ──*
  │
  │ Copyright (c) 2023-2025 Deimonn (a.k.a. Nahuel S. Cisterna)
  │
