@@ -14,6 +14,7 @@ import { OroTheme, buildTheme } from "./oro/theme";
 import { VSCodeTheme } from "./vscode/theme";
 
 import { mainTheme, mainThemeItalics } from "./oro/themes/main";
+import { originalTheme, originalThemeItalics } from "./oro/themes/original";
 
 import * as fs from "fs";
 
@@ -23,7 +24,12 @@ if (!fs.existsSync("dist")) {
 }
 
 // Generate theme JSON files.
-for (const theme of [mainTheme(), mainThemeItalics()]) {
+const themes = [
+    mainTheme(), mainThemeItalics(),
+    originalTheme(), originalThemeItalics()
+];
+
+for (const theme of themes) {
     fs.writeFileSync(
         `dist/${theme.filename}`,
         JSON.stringify(generateTheme(theme))

@@ -42,6 +42,16 @@
                 "label": "Oro Theme (Italics)",
                 "uiTheme": "vs-dark",
                 "path": "./dist/mainThemeItalics.json"
+            },
+            {
+                "label": "Oro Theme: Original",
+                "uiTheme": "vs-dark",
+                "path": "./dist/originalTheme.json"
+            },
+            {
+                "label": "Oro Theme: Original (Italics)",
+                "uiTheme": "vs-dark",
+                "path": "./dist/originalThemeItalics.json"
             }
         ]
     },
