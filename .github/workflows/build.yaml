@@ -1,4 +1,4 @@
-name: Lint and build extension
+name: Build extension
 
 on:
   push:
