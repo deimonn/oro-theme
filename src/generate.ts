@@ -32,7 +32,7 @@ const themes = [
 for (const theme of themes) {
     fs.writeFileSync(
         `dist/${theme.filename}`,
-        JSON.stringify(generateTheme(theme))
+        JSON.stringify(generateTheme(theme), null, 4)
     );
 }
 
