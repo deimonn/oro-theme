@@ -2,7 +2,7 @@
     "name": "oro-theme",
     "version": "2.8.0",
     "displayName": "Oro Theme",
-    "description": "A dark mode theme that aims to be both functional and aesthetically pleasing.",
+    "description": "Dark mode theme that aims to be both functional and aesthetically pleasing",
     "publisher": "deimonn",
     "license": "MIT",
     "repository": {
