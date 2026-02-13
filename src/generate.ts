@@ -482,6 +482,11 @@ function generateTheme(theme: OroTheme): VSCodeTheme {
             "editorOverviewRuler.findMatchForeground": built.match.fade(.50).hexa(),
             "minimap.findMatchHighlight": built.match.fade(.50).hexa(),
 
+            // Minimap.
+            "minimapSlider.activeBackground": built.guideFocus.fade(.60).hexa(),
+            "minimapSlider.hoverBackground": built.guide.fade(.60).hexa(),
+            "minimapSlider.background": built.guide.fade(.60).hexa(),
+
             /*───────────*
              │ Interface
              */
