@@ -78,8 +78,8 @@ type BaseTheme<S, C> = {
     untracked: C
 
     /**
-     * Color for "running" items in the interface; currently just used for running processes on a
-     * forwarded port.
+     * Color for "running" items in the interface; currently just used for
+     * running processes on a forwarded port.
      */
     running: C
 

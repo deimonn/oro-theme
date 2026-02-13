@@ -24,7 +24,10 @@ export function isOroColor(style: OroStyle): style is OroColor {
     return typeof style === "string" || style instanceof Color;
 }
 
-/** Builds a color. If its a hex color code string, converts it into a `Color` instance. */
+/**
+ * Builds a color. If its a hex color code string, converts it into a `Color`
+ * instance.
+ */
 export function buildColor(color: OroColor): BuiltColor {
     if (typeof color === "string") {
         return new Color(color);

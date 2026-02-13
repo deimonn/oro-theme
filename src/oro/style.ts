@@ -11,7 +11,10 @@
 // SPDX-License-Identifier: MIT
 
 import { OroColor, BuiltColor, isOroColor, buildColor } from "./color";
-import { VSCodeSemanticTokenColor, VSCodeTokenColorSettings } from "../vscode/theme";
+import {
+    VSCodeSemanticTokenColor,
+    VSCodeTokenColorSettings
+} from "../vscode/theme";
 
 /** Oro style. Describes how to style a token. Build with `buildStyle`. */
 export type OroStyle = OroColor | {
