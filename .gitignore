@@ -10,8 +10,9 @@
 .*.sw?
 .sw?
 
-# OS X specific files.
+# OS specific files.
 .DS_store
+Thumbs.db
 
 # Build artifacts and outputs.
 /out
