@@ -42,6 +42,9 @@ export type VSCodeTokenColorSettings = {
  * should yield a fully functional theme.
  */
 export type VSCodeTheme = {
+    /** JSON schema. Included to aid probing and debugging. */
+    $schema: "vscode://schemas/color-theme",
+
     /** Whether semantic highlighting is enabled for the theme. */
     semanticHighlighting?: boolean
     /** Semantic token style rules. */

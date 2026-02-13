@@ -44,6 +44,8 @@ for (const theme of themes) {
 function generateTheme(theme: OroTheme): VSCodeTheme {
     const built = buildTheme(theme);
     return {
+        $schema: "vscode://schemas/color-theme",
+
         /*─────────────────*
          │ Semantic tokens
          */
