@@ -404,7 +404,7 @@ function generateTheme(theme: OroTheme): VSCodeTheme {
             "editorOverviewRuler.border": built.background.hex(),
 
             // Guides.
-            "editor.foldBackground": built.guide.darken(.50).hex(),
+            "editor.foldBackground": built.guide.fade(.66).hexa(),
 
             "editor.lineHighlightBackground": built.background.hex(),
             "editor.lineHighlightBorder": built.guide.fade(.50).hexa(),
