@@ -1,10 +1,10 @@
-/*── oro/theme/original.ts ── Original Oro Theme and its italics counterpart ──*
+/*── oro/themes/original.ts ── Pre-v2.6.0 theme and its italics counterpart ──*
  │
- │ Copyright (c) 2025 Deimonn (a.k.a. Nahuel S. Cisterna)
+ │ Copyright (c) 2025-2026 Deimonn
  │
  │ This file is licensed under the MIT License.
  │
- │ See https://raw.githubusercontent.com/deimonn/oro-theme/master/LICENSE for license information.
+ │ See https://deimonn.dev/oro-theme/license.txt for license information.
  │
  */
 

@@ -1,10 +1,10 @@
-/*── generate.ts ── Generates the actual theme JSON files for distribution ──*
+/*── generate.ts ── Theme generator ──*
  │
- │ Copyright (c) 2023-2025 Deimonn (a.k.a. Nahuel S. Cisterna)
+ │ Copyright (c) 2023-2026 Deimonn
  │
  │ This file is licensed under the MIT License.
  │
- │ See https://raw.githubusercontent.com/deimonn/oro-theme/master/LICENSE for license information.
+ │ See https://deimonn.dev/oro-theme/license.txt for license information.
  │
  */
 

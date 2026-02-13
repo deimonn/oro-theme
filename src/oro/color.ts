@@ -1,10 +1,10 @@
-/*── oro/color.ts ── Object used to represent, manipulate and build colors in the extension ──*
+/*── oro/color.ts ── Token color utilities ──*
  │
- │ Copyright (c) 2024-2025 Deimonn (a.k.a. Nahuel S. Cisterna)
+ │ Copyright (c) 2024-2026 Deimonn
  │
  │ This file is licensed under the MIT License.
  │
- │ See https://raw.githubusercontent.com/deimonn/oro-theme/master/LICENSE for license information.
+ │ See https://deimonn.dev/oro-theme/license.txt for license information.
  │
  */
 

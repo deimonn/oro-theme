@@ -1,10 +1,10 @@
-/*── vscode/theme.ts ── Visual Studio Code theme type declarations ──*
+/*── vscode/theme.ts ── Theme and token definitions matching VSCode ones ──*
  │
- │ Copyright (c) 2024-2025 Deimonn (a.k.a. Nahuel S. Cisterna)
+ │ Copyright (c) 2024-2026 Deimonn
  │
  │ This file is licensed under the MIT License.
  │
- │ See https://raw.githubusercontent.com/deimonn/oro-theme/master/LICENSE for license information.
+ │ See https://deimonn.dev/oro-theme/license.txt for license information.
  │
  */
 
