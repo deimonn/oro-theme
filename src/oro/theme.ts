@@ -14,7 +14,7 @@ import { OroColor, BuiltColor, buildColor } from "./color";
 import { OroStyle, BuiltStyle, buildStyle } from "./style";
 
 /** Generic theme type. */
-type BaseTheme<S, C> = {
+type Theme<S, C> = {
     /** Style for keywords. */
     keyword: S
     /** Style for operators. */
@@ -159,10 +159,10 @@ export type OroTheme = {
     name: string
     /** The name to give to the theme file. */
     filename: string
-} & BaseTheme<OroStyle, OroColor>;
+} & Theme<OroStyle, OroColor>;
 
 /** Built theme styles and colors. */
-export type BuiltTheme = BaseTheme<BuiltStyle, BuiltColor>;
+export type BuiltTheme = Theme<BuiltStyle, BuiltColor>;
 
 /** Builds an Oro theme definition. */
 export function buildTheme(theme: OroTheme): BuiltTheme {
