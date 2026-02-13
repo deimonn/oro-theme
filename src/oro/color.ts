@@ -10,7 +10,7 @@
 
 // SPDX-License-Identifier: MIT
 
-import Color = require("color")
+import Color = require("color");
 
 import { OroStyle } from "./style";
 
