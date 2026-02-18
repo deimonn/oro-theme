@@ -68,6 +68,14 @@ export function mainTheme(): OroTheme {
 
         guide: "#5F5F5F",
         guideFocus: "#B9B9B9",
+        guideHints: [
+            "#000000",
+            "#202020",
+            "#404040",
+            "#606060",
+            "#808080",
+            "#A0A0A0",
+        ],
 
         match: "#4482FF",
         matchFocus: "#4482FF",
