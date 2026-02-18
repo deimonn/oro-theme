@@ -415,17 +415,39 @@ function generateTheme(theme: OroTheme): VSCodeTheme {
             "editorRuler.foreground": built.guide.hex(),
             "editorWhitespace.foreground": built.guide.hex(),
 
-            // Bracket matching and indentation.
+            // Indent guides.
+            "editorIndentGuide.activeBackground1":
+                built.guideHints![0].mix(built.guideFocus).hex(),
+            "editorIndentGuide.activeBackground2":
+                built.guideHints![1].mix(built.guideFocus).hex(),
+            "editorIndentGuide.activeBackground3":
+                built.guideHints![2].mix(built.guideFocus).hex(),
+            "editorIndentGuide.activeBackground4":
+                built.guideHints![3].mix(built.guideFocus).hex(),
+            "editorIndentGuide.activeBackground5":
+                built.guideHints![4].mix(built.guideFocus).hex(),
+            "editorIndentGuide.activeBackground6":
+                built.guideHints![5].mix(built.guideFocus).hex(),
+
+            "editorIndentGuide.background1":
+                built.guideHints![0].mix(built.guide).hex(),
+            "editorIndentGuide.background2":
+                built.guideHints![1].mix(built.guide).hex(),
+            "editorIndentGuide.background3":
+                built.guideHints![2].mix(built.guide).hex(),
+            "editorIndentGuide.background4":
+                built.guideHints![3].mix(built.guide).hex(),
+            "editorIndentGuide.background5":
+                built.guideHints![4].mix(built.guide).hex(),
+            "editorIndentGuide.background6":
+                built.guideHints![5].mix(built.guide).hex(),
+
+            // Bracket matching and guides.
             "editorBracketMatch.background": "#00000000",
             "editorBracketMatch.border": built.punctuation.color.hex(),
 
             "editorOverviewRuler.bracketMatchForeground":
                 built.punctuation.color.hex(),
-
-            "editorIndentGuide.activeBackground":
-                built.guideFocus.darken(.50).hex(),
-            "editorIndentGuide.background":
-                built.guide.darken(.50).hex(),
 
             // Tabs.
             "tab.activeBackground": built.background.hex(),

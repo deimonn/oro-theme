@@ -104,6 +104,11 @@ type Theme<S, C> = {
     guide: C
     /** Focused guide color. */
     guideFocus: C
+    /**
+     * Guide color hints applied to `guide` and `guideFocus` on specific cases.
+     * Currently just used for indentation guides.
+     */
+    guideHints?: [C, C, C, C, C, C],
 
     /** Color for search matches. */
     match: C
@@ -166,6 +171,17 @@ export type BuiltTheme = Theme<BuiltStyle, BuiltColor>;
 
 /** Builds an Oro theme definition. */
 export function buildTheme(theme: OroTheme): BuiltTheme {
+    // Default missing properties.
+    const guideHints = theme.guideHints ?? [
+        "#000000",
+        "#000000",
+        "#000000",
+        "#000000",
+        "#000000",
+        "#000000",
+    ];
+
+    // Return built theme.
     return {
         keyword: buildStyle(theme.keyword),
         operator: buildStyle(theme.operator),
@@ -216,6 +232,14 @@ export function buildTheme(theme: OroTheme): BuiltTheme {
 
         guide: buildColor(theme.guide),
         guideFocus: buildColor(theme.guideFocus),
+        guideHints: [
+            buildColor(guideHints[0]),
+            buildColor(guideHints[1]),
+            buildColor(guideHints[2]),
+            buildColor(guideHints[3]),
+            buildColor(guideHints[4]),
+            buildColor(guideHints[5])
+        ],
 
         match: buildColor(theme.match),
         matchFocus: buildColor(theme.matchFocus),
