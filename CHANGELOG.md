@@ -4,6 +4,25 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.9.0](https://github.com/deimonn/oro-theme/compare/v2.8.0...v2.9.0) - 2026-02-20
+
+### Added
+
+- Main theme additions
+  - Indentation guides now get brighter for every indentation level (up to 6)
+
+### Changed
+
+- New icon and logo designs
+- Changed the extension's package description to match the repository's
+- Main theme and original theme changes
+  - Improved minimap slider visibility
+
+### Fixed
+
+- Removed deprecated rules from the theme
+- Fold backgrounds as well as find match highlights in the ruler and minimap are now partially transparent as per VSCode recommendation (the schema was generating a warning about them being opaque)
+
 ## [2.8.0](https://github.com/deimonn/oro-theme/compare/v2.7.0-preview...v2.8.0) - 2025-04-07
 
 This update officializes the additions and changes from the [2.7.0](#270-pre-release---2025-03-14) pre-release.
