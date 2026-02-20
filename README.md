@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://raw.githubusercontent.com/deimonn/oro-theme/master/images/title.png">
+  <img src="https://raw.githubusercontent.com/deimonn/oro-theme/master/images/logo.png">
   <br><br>
   <img src="https://raw.githubusercontent.com/deimonn/oro-theme/master/images/screenshot.png">
 </p>
